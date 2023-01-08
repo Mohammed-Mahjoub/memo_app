@@ -26,7 +26,9 @@ class _HomeReelsScreenState extends State<HomeReelsScreen> {
         ),
         itemBuilder: (context, index) {
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/reel_screen');
+            },
             child: Stack(
               children: [
                 Container(

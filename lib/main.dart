@@ -9,6 +9,7 @@ import 'package:memo_app/screens/auth/login_screen.dart';
 import 'package:memo_app/screens/auth/register/main_register_screen.dart';
 import 'package:memo_app/screens/auth/register/register_data_screen.dart';
 import 'package:memo_app/screens/bn_screens/bottom_navigation_screen.dart';
+import 'package:memo_app/screens/bn_screens/home/reel_screen.dart';
 import 'package:memo_app/screens/bn_screens/home/video_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/accounts/add_account_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/accounts/add_game_screen.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
               '/liked_screen': (context) => const LikedScreen(),
               '/other_profile_screen': (context) => const OtherProfileScreen(),
               '/video_screen': (context) => const VideoScreen(),
+              '/reel_screen': (context) => const ReelScreen(),
             },
           );
         });

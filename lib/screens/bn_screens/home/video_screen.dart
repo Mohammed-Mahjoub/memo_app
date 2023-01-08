@@ -291,3 +291,28 @@ class _VideoScreenState extends State<VideoScreen> {
     );
   }
 }
+/*
+*
+* PageView.builder(
+                    controller: _pageController,
+                    itemCount: snapshot.data!.slider!.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        margin:
+                            EdgeInsetsDirectional.only(end: index != 2 ? 10 : 0),
+                        elevation: 1,
+                        color: Colors.white,
+                        child: Image(
+                          image: NetworkImage(
+                              snapshot.data!.slider![index].imageUrl!),
+                          fit: BoxFit.contain,
+                        ),
+                        // alignment: Alignment.center,
+                      );
+                    },
+                  )
+* */
