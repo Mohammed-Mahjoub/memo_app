@@ -1,19 +1,20 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:memo_app/screens/auth/register/mobile_register_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/accounts/accounts_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/people_screens/people_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/reels_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/videos_screen.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
-import 'package:memo_app/widgets/app_button.dart';
 
-class AccountsScreen extends StatefulWidget {
-  const AccountsScreen({Key? key}) : super(key: key);
+class MyProfileScreen extends StatefulWidget {
+  const MyProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<AccountsScreen> createState() => _AccountsScreenState();
+  State<MyProfileScreen> createState() => _MyProfileScreenState();
 }
 
-class _AccountsScreenState extends State<AccountsScreen>
+class _MyProfileScreenState extends State<MyProfileScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -40,25 +41,34 @@ class _AccountsScreenState extends State<AccountsScreen>
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
-              children: [
-                Text(
-                  '110',
-                  style: GoogleFonts.poppins(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors().black,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PeopleScreen(index: 0),
+                    ));
+              },
+              child: Column(
+                children: [
+                  Text(
+                    '110',
+                    style: GoogleFonts.poppins(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors().black,
+                    ),
                   ),
-                ),
-                Text(
-                  'Following',
-                  style: GoogleFonts.poppins(
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors().grey,
+                  Text(
+                    'Following',
+                    style: GoogleFonts.poppins(
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors().grey,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(width: 30.w),
             Container(
@@ -73,25 +83,34 @@ class _AccountsScreenState extends State<AccountsScreen>
               ),
             ),
             SizedBox(width: 30.w),
-            Column(
-              children: [
-                Text(
-                  '1.5M',
-                  style: GoogleFonts.poppins(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors().black,
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PeopleScreen(index: 1),
+                    ));
+              },
+              child: Column(
+                children: [
+                  Text(
+                    '1.5M',
+                    style: GoogleFonts.poppins(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors().black,
+                    ),
                   ),
-                ),
-                Text(
-                  'Followers',
-                  style: GoogleFonts.poppins(
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors().grey,
+                  Text(
+                    'Followers',
+                    style: GoogleFonts.poppins(
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors().grey,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
@@ -265,20 +284,21 @@ DN''',
             ],
           ),
         ),
+        SizedBox(height: 15.h),
         IndexedStack(
           index: _tabController.index,
           children: [
             Visibility(
               visible: _tabController.index == 0,
-              child: const MobileRegisterScreen(),
+              child: const ReelsScreen(),
             ),
             Visibility(
               visible: _tabController.index == 1,
-              child: const MobileRegisterScreen(),
+              child: const VideosScreen(),
             ),
             Visibility(
               visible: _tabController.index == 2,
-              child: const MobileRegisterScreen(),
+              child: const AccountsScreen(),
             ),
           ],
         ),

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/models/bn_screen.dart';
 import 'package:memo_app/screens/bn_screens/cart_screen.dart';
 import 'package:memo_app/screens/bn_screens/add_screen.dart';
-import 'package:memo_app/screens/bn_screens/home_screen.dart';
+import 'package:memo_app/screens/bn_screens/home/home_screen.dart';
 import 'package:memo_app/screens/bn_screens/chat_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/profile_screen.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
@@ -29,95 +29,34 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       const BnScreen(title: 'profile', widget: ProfileScreen()),
     ];
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: IconThemeData(color: AppColors().black),
-        title: Text(
-          screens[_selectedPageIndex].title,
-          style: GoogleFonts.poppins(
-            fontSize: 17.sp,
-            fontWeight: FontWeight.w500,
-            color: AppColors().black,
-          ),
-        ),
-        actions: [
-          Visibility(
-            visible: screens[_selectedPageIndex].title == 'cart',
-            child: IconButton(
-              onPressed: () {
-                // CartGetxController.to.clear();
-              },
-              icon: const Icon(
-                Icons.delete,
-                color: Colors.red,
-              ),
-            ),
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            Container(
-              width: double.infinity,
-              height: 170,
-              color: const Color(0XFF2A928F),
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const CircleAvatar(
-                      radius: 40,
-                      backgroundColor: Colors.white,
-                      child: Icon(Icons.add),
-                    ),
-                    Text(
-                      'test',
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 18.sp,
-                        color: AppColors().white,
-                      ),
-                    ),
-                    Text(
-                      'test',
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16.sp,
-                        color: AppColors().white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              onTap: () {
-                // Navigator.pop(context);
-                // Future.delayed(const Duration(milliseconds: 500), () {
-                //   Navigator.pushNamed(context, '/payment_screen');
-                // });
-              },
-              leading: const Icon(Icons.add),
-              title: Text(
-                'payment',
-                style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16.sp,
-                  color: AppColors().white,
-                ),
-              ),
-              trailing: const Icon(
-                Icons.arrow_forward_ios,
-                size: 18,
-              ),
-            ),
-          ],
-        ),
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      //   iconTheme: IconThemeData(color: AppColors().black),
+      //   title: Text(
+      //     screens[_selectedPageIndex].title,
+      //     style: GoogleFonts.poppins(
+      //       fontSize: 17.sp,
+      //       fontWeight: FontWeight.w500,
+      //       color: AppColors().black,
+      //     ),
+      //   ),
+      //   actions: [
+      //     Visibility(
+      //       visible: screens[_selectedPageIndex].title == 'cart',
+      //       child: IconButton(
+      //         onPressed: () {
+      //           // CartGetxController.to.clear();
+      //         },
+      //         icon: const Icon(
+      //           Icons.delete,
+      //           color: Colors.red,
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
       body: screens[_selectedPageIndex].widget,
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.only(

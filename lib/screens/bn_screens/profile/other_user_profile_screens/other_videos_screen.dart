@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
-class VideosScreen extends StatefulWidget {
-  const VideosScreen({Key? key}) : super(key: key);
+class OtherVideosScreen extends StatefulWidget {
+  const OtherVideosScreen({Key? key}) : super(key: key);
 
   @override
-  State<VideosScreen> createState() => _VideosScreenState();
+  State<OtherVideosScreen> createState() => _OtherVideosScreenState();
 }
 
-class _VideosScreenState extends State<VideosScreen> {
+class _OtherVideosScreenState extends State<OtherVideosScreen> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
