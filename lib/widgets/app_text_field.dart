@@ -12,6 +12,7 @@ class AppTextField extends StatelessWidget {
     this.labelText,
     this.obscure = false,
     this.suffixIcon,
+    this.prefixIcon,
     this.onChange,
   }) : super(key: key);
 
@@ -21,6 +22,7 @@ class AppTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscure;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final void Function(String x)? onChange;
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class AppTextField extends StatelessWidget {
       style: GoogleFonts.poppins(),
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
         label: labelText!=null ? Text(labelText!) : null,
         labelStyle: GoogleFonts.poppins(
           fontSize: 15.sp,

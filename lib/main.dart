@@ -9,6 +9,18 @@ import 'package:memo_app/screens/auth/login_screen.dart';
 import 'package:memo_app/screens/auth/register/main_register_screen.dart';
 import 'package:memo_app/screens/auth/register/register_data_screen.dart';
 import 'package:memo_app/screens/bn_screens/bottom_navigation_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/add_hashtag.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/add_post_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/locations_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/mention_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/select%20_screen_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/select_cover_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/tag_people_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/upload%20_cover_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/upload_portrait_or_wide_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/wide_screen.dart';
+import 'package:memo_app/screens/bn_screens/chat/conversation_screen.dart';
+import 'package:memo_app/screens/bn_screens/chat/new_message.dart';
 import 'package:memo_app/screens/bn_screens/home/video_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/accounts/add_account_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/accounts/add_game_screen.dart';
@@ -53,6 +65,18 @@ class MyApp extends StatelessWidget {
               '/liked_screen': (context) => const LikedScreen(),
               '/other_profile_screen': (context) => const OtherProfileScreen(),
               '/video_screen': (context) => const VideoScreen(),
+              '/add_post_screen': (context) => const AddPostScreen(),
+              '/tap_people_screen': (context) => const TagPeopleScreen(),
+              '/select_cover_screen': (context) => const SelectCoverScreen(),
+              '/upload_cover_screen': (context) => const UploadCoverScreen(),
+              '/mention_screen': (context) => const MentionScreen(),
+              '/locations_screen': (context) => const LocationsScreen(),
+              '/upload_portrait_or_wide_screen': (context) => const UploadPortraitOrWideScreen(),
+              '/select_screen': (context) => const SelectScreen(),
+              '/wide_screen': (context) => const WideScreen(),
+              '/add_hashtag': (context) => const AddHashtag(),
+              '/new_message_screen': (context) => const NewMessageScreen(),
+              '/conversation_screen': (context) => const ConversationScreen(),
             },
           );
         });
