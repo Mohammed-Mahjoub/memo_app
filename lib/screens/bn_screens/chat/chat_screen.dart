@@ -156,6 +156,9 @@ class _ChatScreenState extends State<ChatScreen>
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return ListTile(
+                      onTap: (){
+                        Navigator.pushNamed(context, '/conversation_screen');
+                      },
                       onLongPress: () {
                         showBottomSheet(
                           elevation: 3,
