@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:memo_app/screens/auth/register/mobile_register_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/my_profile_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/slogan_screen.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -202,7 +202,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             children: [
               Visibility(
                 visible: _tabController.index == 0,
-                child: const MobileRegisterScreen(),
+                child: const SloganScreen(),
               ),
               Visibility(
                 visible: _tabController.index == 1,

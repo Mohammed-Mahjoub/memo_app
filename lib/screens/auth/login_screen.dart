@@ -101,7 +101,9 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           SizedBox(height: 30.h),
           AppButton(
-            onPress: () {},
+            onPress: () {
+              Navigator.pushNamed(context, '/bn_screens');
+            },
             text: 'Login',
             buttonColor: AppColors().purple,
             fontWeight: FontWeight.w500,

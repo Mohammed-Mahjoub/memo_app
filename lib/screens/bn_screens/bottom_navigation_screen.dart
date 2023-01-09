@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/models/bn_screen.dart';
-import 'package:memo_app/screens/bn_screens/cart_screen.dart';
+import 'package:memo_app/screens/bn_screens/shop/shop_screen.dart';
 import 'package:memo_app/screens/bn_screens/add_screen.dart';
 import 'package:memo_app/screens/bn_screens/home/home_screen.dart';
 import 'package:memo_app/screens/bn_screens/chat/chat_screen.dart';
@@ -23,7 +23,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   Widget build(BuildContext context) {
     final List<BnScreen> screens = <BnScreen>[
       const BnScreen(title: 'home', widget: HomeScreen()),
-      const BnScreen(title: 'cart', widget: CartScreen()),
+      const BnScreen(title: 'shop', widget: ShopScreen()),
       const BnScreen(title: 'add', widget: AddScreen()),
       const BnScreen(title: 'chat', widget: ChatScreen()),
       const BnScreen(title: 'profile', widget: ProfileScreen()),
@@ -112,7 +112,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                 Icons.shopping_cart_outlined,
                 color: Colors.grey,
               ),
-              label: 'Cart',
+              label: 'Shop',
             ),
             BottomNavigationBarItem(
               activeIcon: Icon(
