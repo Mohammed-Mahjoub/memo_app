@@ -14,9 +14,11 @@ class AppTextField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.onChange,
+    this.maxline,
   }) : super(key: key);
 
   final TextEditingController textEditingController;
+  final int? maxline;
   final String hintText;
   final String? labelText;
   final TextInputType keyboardType;
@@ -27,6 +29,7 @@ class AppTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      maxLines: maxline,
       onChanged: onChange,
       obscureText: obscure,
       controller: textEditingController,
