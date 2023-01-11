@@ -143,7 +143,7 @@ class _SloganScreenState extends State<SloganScreen>
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,9 +151,13 @@ class _SloganScreenState extends State<SloganScreen>
                             Align(
                               alignment: Alignment.center,
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, '/product_screen');
+                                },
                                 child: const Image(
-                                  image: AssetImage('assets/images/product.png'),
+                                  image:
+                                      AssetImage('assets/images/product.png'),
                                   height: 100,
                                   width: 100,
                                   fit: BoxFit.cover,
@@ -266,7 +270,7 @@ class _SloganScreenState extends State<SloganScreen>
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -274,9 +278,13 @@ class _SloganScreenState extends State<SloganScreen>
                             Align(
                               alignment: Alignment.center,
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, '/product_screen');
+                                },
                                 child: const Image(
-                                  image: AssetImage('assets/images/product.png'),
+                                  image:
+                                      AssetImage('assets/images/product.png'),
                                   height: 100,
                                   width: 100,
                                   fit: BoxFit.cover,
@@ -357,9 +365,8 @@ class _SloganScreenState extends State<SloganScreen>
                       top: 0,
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(
-                          Icons.favorite,
-                          color: AppColors().red,
+                        icon: const Icon(
+                          Icons.favorite_border,
                         ),
                       ),
                     ),

@@ -7,7 +7,6 @@ import 'package:memo_app/screens/bn_screens/add_screen.dart';
 import 'package:memo_app/screens/bn_screens/home/home_screen.dart';
 import 'package:memo_app/screens/bn_screens/chat/chat_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/profile_screen.dart';
-import 'package:memo_app/utils/colors/app_colors.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({Key? key}) : super(key: key);

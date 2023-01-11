@@ -138,8 +138,6 @@ class _MyProfileScreenState extends State<MyProfileScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 45.w,
-              height: 35.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
                 border: Border.fromBorderSide(
@@ -148,17 +146,18 @@ class _MyProfileScreenState extends State<MyProfileScreen>
                   ),
                 ),
               ),
-              child: Center(
-                child: Icon(
-                  Icons.favorite,
-                  color: AppColors().red,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Icon(
+                    Icons.favorite,
+                    color: AppColors().red,
+                  ),
                 ),
               ),
             ),
             SizedBox(width: 10.w),
             Container(
-              width: 45.w,
-              height: 35.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
                 border: Border.fromBorderSide(
@@ -167,17 +166,18 @@ class _MyProfileScreenState extends State<MyProfileScreen>
                   ),
                 ),
               ),
-              child: Center(
-                child: Icon(
-                  Icons.save,
-                  color: AppColors().black,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Icon(
+                    Icons.save,
+                    color: AppColors().black,
+                  ),
                 ),
               ),
             ),
             SizedBox(width: 20.w),
             Container(
-              width: 116.w,
-              height: 35.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
                 border: Border.fromBorderSide(
@@ -186,23 +186,26 @@ class _MyProfileScreenState extends State<MyProfileScreen>
                   ),
                 ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Edit profile',
-                    style: GoogleFonts.poppins(
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w500,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Edit profile',
+                      style: GoogleFonts.poppins(
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors().black,
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+                    Icon(
+                      Icons.edit,
                       color: AppColors().black,
                     ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Icon(
-                    Icons.edit,
-                    color: AppColors().black,
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
