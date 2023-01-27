@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/screens/bn_screens/profile/accounts/accounts_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/people_screens/people_screen.dart';
@@ -177,54 +178,111 @@ class _MyProfileScreenState extends State<MyProfileScreen>
               ),
             ),
             SizedBox(width: 20.w),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.r),
-                border: Border.fromBorderSide(
-                  BorderSide(
-                    color: AppColors().black,
-                  ),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Edit profile',
-                      style: GoogleFonts.poppins(
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors().black,
-                      ),
-                    ),
-                    SizedBox(width: 10.w),
-                    Icon(
-                      Icons.edit,
+            InkWell(
+              onTap: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        height:260.h,
+                        child: Container(
+                          height: 221.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(10.r),
+                                topLeft: Radius.circular(10.r),
+                              ),
+                              color: Colors.white),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15.w, vertical: 15.h),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                ListTile(
+                                  leading: SvgPicture.asset(
+                                    'assets/images/Group 1057.svg',
+                                  ),
+                                  title: Text(
+                                    'Promotion ads',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 15.sp
+                                    ),
+                                  ),
+                                ),
+                                Divider(),
+                                ListTile(
+                                  leading: SvgPicture.asset(
+                                    'assets/images/Group 1058.svg',
+                                  ),
+                                  title: Text(
+                                    'The shop',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 15.sp
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    Navigator.pushNamed(context, '/the_shop');
+                                  },
+                                ),
+                                Divider(),
+                                ListTile(
+                                  leading: SvgPicture.asset(
+                                    'assets/images/Setting.svg',
+                                  ),
+                                  title: Text(
+                                    'Settings and privcy',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 15.sp
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    Navigator.pushNamed(context, '/settings_and_privacy');
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                    backgroundColor: Colors.transparent);
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
+                  border: Border.fromBorderSide(
+                    BorderSide(
                       color: AppColors().black,
                     ),
-                  ],
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Edit profile',
+                        style: GoogleFonts.poppins(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors().black,
+                        ),
+                      ),
+                      SizedBox(width: 10.w),
+                      Icon(
+                        Icons.edit,
+                        color: AppColors().black,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
           ],
         ),
         SizedBox(height: 15.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.call,
-              color: AppColors().blue,
-            ),
-            SizedBox(width: 20.w),
-            Icon(
-              Icons.message,
-              color: AppColors().blue,
-            ),
-          ],
-        ),
         SizedBox(height: 15.h),
         Text(
           '''ناشر محتوى

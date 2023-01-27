@@ -29,6 +29,27 @@ import 'package:memo_app/screens/bn_screens/chat/conversation_screen.dart';
 import 'package:memo_app/screens/bn_screens/chat/new_message.dart';
 import 'package:memo_app/screens/bn_screens/home/reel_screen.dart';
 import 'package:memo_app/screens/bn_screens/home/video_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/AccountDetails/account_details.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/AccountDetails/account_information.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/AccountDetails/creat_new_password.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/AccountDetails/dateof_birth.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/AccountDetails/deactivate_or_delete_account.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/display.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/AccountDetails/gender.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/language.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/private_account.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/security/security.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/security/security_alerts.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/security/your_devices.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/settings_and_privacy_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/Settings%20and%20privacy/views%20_history.dart';
+import 'package:memo_app/screens/bn_screens/profile/The%20Shop/the_shop.dart';
+import 'package:memo_app/screens/bn_screens/profile/The%20Shop/the_shop2.dart';
+import 'package:memo_app/screens/bn_screens/profile/The%20Shop/the_shop3.dart';
+import 'package:memo_app/screens/bn_screens/profile/The%20Shop/the_shop4.dart';
+import 'package:memo_app/screens/bn_screens/profile/The%20Shop/the_shop5.dart';
+import 'package:memo_app/screens/bn_screens/profile/The%20Shop/the_shop6.dart';
+import 'package:memo_app/screens/bn_screens/profile/The%20Shop/the_shop7.dart';
 import 'package:memo_app/screens/bn_screens/profile/accounts/add_account_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/accounts/add_game_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/drower_screens/liked_screens/liked_screen.dart';
@@ -93,6 +114,27 @@ class MyApp extends StatelessWidget {
               '/new_products': (context) => const NewProducts(),
               '/product_details': (context) => const ProductDetails(),
               '/ProductPhoto': (context) => const ProductPhoto(),
+              '/settings_and_privacy': (context) => const SettingsAndPrivacy(),
+              '/account_details': (context) => const AccountDetails(),
+              '/security': (context) => const Security(),
+              '/private_account': (context) => const PrivateAccount(),
+              '/language': (context) => const Language(),
+              '/display': (context) => const Display(),
+              '/views_history': (context) => const ViewsHistory(),
+              '/the_shop': (context) => const TheShop(),
+              '/the_shop2': (context) => const TheShop2(),
+              '/the_shop3': (context) => const TheShop3(),
+              '/the_shop4': (context) => const TheShop4(),
+              '/the_shop5': (context) => const TheShop5(),
+              '/the_shop6': (context) => const TheShop6(),
+              '/the_shop7': (context) => const TheShop7(),
+              '/account_information': (context) => const Accountinformation(),
+              '/creat_new_password': (context) => const CreatNewPassword(),
+              '/deactivate_or_delete_account': (context) => const DeactivateOrDeleteAccount(),
+              '/gender': (context) => const Gender(),
+              '/date_of_birth': (context) => const DateOfBirth(),
+              '/security_alerts': (context) => const SecurityAlerts(),
+              '/your_devices': (context) => const YourDevices(),
             },
           );
         });

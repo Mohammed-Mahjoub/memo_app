@@ -33,6 +33,7 @@ class AppButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),
+        elevation: 0
       ),
       child: Text(
         text,
