@@ -28,34 +28,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       const BnScreen(title: 'profile', widget: ProfileScreen()),
     ];
     return Scaffold(
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      //   iconTheme: IconThemeData(color: AppColors().black),
-      //   title: Text(
-      //     screens[_selectedPageIndex].title,
-      //     style: GoogleFonts.poppins(
-      //       fontSize: 17.sp,
-      //       fontWeight: FontWeight.w500,
-      //       color: AppColors().black,
-      //     ),
-      //   ),
-      //   actions: [
-      //     Visibility(
-      //       visible: screens[_selectedPageIndex].title == 'cart',
-      //       child: IconButton(
-      //         onPressed: () {
-      //           // CartGetxController.to.clear();
-      //         },
-      //         icon: const Icon(
-      //           Icons.delete,
-      //           color: Colors.red,
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
+
       body: screens[_selectedPageIndex].widget,
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.only(

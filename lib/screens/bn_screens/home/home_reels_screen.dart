@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
@@ -20,22 +21,101 @@ class _HomeReelsScreenState extends State<HomeReelsScreen> {
         itemCount: 9,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          mainAxisSpacing: 5.h,
-          crossAxisSpacing: 5.w,
-          childAspectRatio: 111 / 150,
+          mainAxisSpacing: 10.h,
+          crossAxisSpacing: 10.w,
+          childAspectRatio: 166 / 227,
         ),
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
               Navigator.pushNamed(context, '/reel_screen');
             },
+            onLongPress: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Container(
+                      height: double.infinity,
+                      child: Container(
+                        height: 280.h,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(10.r),
+                              topLeft: Radius.circular(10.r),
+                            ),
+                            color: Colors.white),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15.w, vertical: 15.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: SvgPicture.asset(
+                                  'assets/images/Vector1.svg',
+                                ),
+                              ),
+                              ListTile(
+                                leading: SvgPicture.asset(
+                                  'assets/images/Vector2.svg',
+                                ),
+                                title: Text(
+                                  'Block',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 15.sp
+                                  ),
+                                ),
+                              ),
+                              Divider(),
+                              ListTile(
+                                leading: SvgPicture.asset(
+                                  'assets/images/Vector2.svg',
+                                ),
+                                title: Text(
+                                  'Not interested',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 15.sp
+                                  ),
+                                ),
+                              ),
+                              Divider(),
+                              ListTile(
+                                leading: SvgPicture.asset(
+                                  'assets/images/Vector2.svg',
+                                ),
+                                title: Text(
+                                  'Don\'t recommend account',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 15.sp
+                                  ),
+                                ),
+                              ),
+                              Divider(),
+                              ListTile(
+                                leading: SvgPicture.asset(
+                                  'assets/images/Group 631.svg',
+                                ),
+                                title: Text(
+                                  'Report',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 15.sp
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                  backgroundColor: Colors.transparent);
+            },
             child: Stack(
               children: [
                 Container(
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
                   child: const Image(
                     image: AssetImage('assets/images/reels.png'),
                     width: double.infinity,
@@ -77,7 +157,8 @@ class _HomeReelsScreenState extends State<HomeReelsScreen> {
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                         ),
-                        child: const Image(image: AssetImage('assets/images/profile.png')),
+                        child: const Image(
+                            image: AssetImage('assets/images/profile.png')),
                       ),
                       Text(
                         'Vivo gaming',
@@ -94,6 +175,5 @@ class _HomeReelsScreenState extends State<HomeReelsScreen> {
             ),
           );
         });
-
   }
 }

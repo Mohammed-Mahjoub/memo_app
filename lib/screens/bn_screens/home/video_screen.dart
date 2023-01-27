@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 import 'package:memo_app/widgets/app_text_field.dart';
@@ -37,45 +38,39 @@ class _VideoScreenState extends State<VideoScreen> {
             child: Row(
               children: [
                 Container(
-                  height: 45.h,
-                  width: 70.w,
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  height: 40.h,
+                  width: 100.w,
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: AppColors().purple,
                       width: 1,
                     ),
-                    borderRadius: BorderRadius.circular(10.r),
+                    borderRadius: BorderRadius.circular(5.r),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(3),
-                    child: SingleChildScrollView(
-                      child: Column(
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 12.5.r,
+                        child:  Image.asset('assets/images/profile.png'),
+                      ),
+                      Column(
                         children: [
                           Row(
                             children: [
-                              Container(
-                                height: 20.h,
-                                width: 20.w,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: const Image(
-                                    image: AssetImage(
-                                        'assets/images/profile.png')),
-                              ),
-                              SizedBox(width: 5.w),
                               Text(
-                                '1110',
+                                '105k',
                                 style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 13.sp,
+                                  fontSize: 11.sp,
                                   color: AppColors().black,
                                 ),
                               ),
+                              Icon(Icons.remove_red_eye_outlined,size: 13.h,)
                             ],
                           ),
                           Text(
-                            'Mohammed Mahjoub',
+                            'المحترف الرقمي',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w600,
@@ -85,28 +80,30 @@ class _VideoScreenState extends State<VideoScreen> {
                           ),
                         ],
                       ),
-                    ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 10.w),
-                Expanded(
+                SizedBox(
+                  width: 175.w,
                   child: Text(
-                    '''The best part I'm from a Chinese company issuing the Armorx Pro Unlimited Professional''',
-                    textAlign: TextAlign.start,
+                    'تختيم لعبة سيكوديم ريميك- البحث في القرية المهجورة شمال القارة العشبية',
+                    textAlign: TextAlign.end,
                     style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13.sp,
+                      fontSize: 11.sp,
                       color: AppColors().black,
                     ),
+
                   ),
                 ),
-                IconButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () {
+                SizedBox(width: 20.w),
+                InkWell(
+                  onTap: () {
                     Navigator.pop(context);
                   },
-                  icon: const Icon(Icons.arrow_drop_down_outlined),
+                  child: const Icon(Icons.keyboard_arrow_down_rounded,size: 35,),
                 ),
+
               ],
             ),
           ),
@@ -136,7 +133,9 @@ class _VideoScreenState extends State<VideoScreen> {
                       ),
                     ),
                     SizedBox(width: 5.w),
-                    const Icon(Icons.info_outline),
+                    SvgPicture.asset(
+                      'assets/images/Frame.svg',
+                    ),
                     const Spacer(),
                     Column(
                       children: [
@@ -157,9 +156,8 @@ class _VideoScreenState extends State<VideoScreen> {
                     SizedBox(width: 15.w),
                     Column(
                       children: [
-                        Icon(
-                          Icons.save,
-                          color: AppColors().blue,
+                        SvgPicture.asset(
+                          'assets/images/Vector8.svg',
                         ),
                         Text(
                           '124',
@@ -174,9 +172,8 @@ class _VideoScreenState extends State<VideoScreen> {
                     SizedBox(width: 15.w),
                     Column(
                       children: [
-                        Icon(
-                          Icons.share,
-                          color: AppColors().black,
+                        SvgPicture.asset(
+                          'assets/images/Vector9.svg',
                         ),
                         Text(
                           '14',

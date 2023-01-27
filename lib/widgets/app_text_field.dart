@@ -14,7 +14,7 @@ class AppTextField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.onChange,
-    this.maxline,
+    this.maxline =1,
   }) : super(key: key);
 
   final TextEditingController textEditingController;

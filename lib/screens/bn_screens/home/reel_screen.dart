@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
@@ -53,7 +54,7 @@ class _ReelScreenState extends State<ReelScreen> {
               ),
               Positioned(
                 right: 0,
-                bottom: 0,
+                bottom: 60.h,
                 child: Column(
                   children: [
                     Column(
@@ -75,16 +76,11 @@ class _ReelScreenState extends State<ReelScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 30.h),
                     Column(
                       children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.comment,
-                            color: AppColors().white,
-                            size: 35,
-                          ),
+                        SvgPicture.asset(
+                          'assets/images/Subtract.svg',
                         ),
                         Text(
                           'Comment',
@@ -95,16 +91,11 @@ class _ReelScreenState extends State<ReelScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 30.h),
                     Column(
                       children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.save,
-                            color: AppColors().white,
-                            size: 35,
-                          ),
+                        SvgPicture.asset(
+                          'assets/images/Rectangle 9.svg',
                         ),
                         Text(
                           'Save',
@@ -115,16 +106,11 @@ class _ReelScreenState extends State<ReelScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 30.h),
                     Column(
                       children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.share,
-                            color: AppColors().white,
-                            size: 35,
-                          ),
+                        SvgPicture.asset(
+                          'assets/images/Union.svg',
                         ),
                         Text(
                           'Share',
@@ -135,7 +121,7 @@ class _ReelScreenState extends State<ReelScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 30.h),
                     IconButton(
                       onPressed: () {},
                       icon: Icon(
@@ -145,6 +131,14 @@ class _ReelScreenState extends State<ReelScreen> {
                       ),
                     ),
                     SizedBox(height: 20.h),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.remove_red_eye_outlined,
+                        color: AppColors().white,
+                        size: 35,
+                      ),
+                    ),
                   ],
                 ),
               ),

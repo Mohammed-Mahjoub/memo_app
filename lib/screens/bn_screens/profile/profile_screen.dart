@@ -191,6 +191,27 @@ class _ProfileScreenState extends State<ProfileScreen>
                 size: 18,
               ),
             ),
+            ListTile(
+              onTap: () {
+                Navigator.pop(context);
+                Future.delayed(const Duration(milliseconds: 500), () {
+                  Navigator.pushNamed(context, '/DealerProfile');
+                });
+              },
+              leading: const Icon(Icons.add_circle_outline),
+              title: Text(
+                'Dealer Profile',
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16.sp,
+                  color: AppColors().black,
+                ),
+              ),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                size: 18,
+              ),
+            ),
           ],
         ),
       ),

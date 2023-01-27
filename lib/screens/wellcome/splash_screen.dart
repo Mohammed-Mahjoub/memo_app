@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,8 +14,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), ()  {
-       Navigator.pushNamed(context, '/onboarding_screen');
+    Future.delayed(const Duration(seconds: 5), () {
+      Navigator.pushNamed(context, '/bn_screens');
     });
   }
 
@@ -31,9 +33,23 @@ class _SplashScreenState extends State<SplashScreen> {
             ],
           ),
         ),
-        child: const Center(
-          child: Image(
-            image: AssetImage('assets/images/splash.png'),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Image(
+                image: AssetImage('assets/images/letter-m 1.png'),
+              ),
+              SizedBox(height: 10.h,),
+              Text(
+                'MEMO',
+                style: GoogleFonts.poppins(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 4.5.sp
+                ),
+              ),
+            ],
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/screens/auth/register/mobile_register_screen.dart';
 import 'package:memo_app/screens/bn_screens/home/home_reels_screen.dart';
@@ -37,15 +38,20 @@ class _HomeScreenState extends State<HomeScreen>
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: AppColors().black),
+        automaticallyImplyLeading: false,
+        titleSpacing: 0,
         title: Row(
           children: [
             Expanded(
               child: TabBar(
-                indicatorColor: AppColors().purple,
+                indicatorColor: AppColors().black,
                 controller: _tabController,
                 labelColor: AppColors().black,
-                unselectedLabelColor: AppColors().grey,
+                labelStyle: GoogleFonts.poppins(
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+                unselectedLabelColor: AppColors().black,
                 onTap: (int tabIndex) {
                   setState(() {
                     _tabController.index = tabIndex;
@@ -53,73 +59,57 @@ class _HomeScreenState extends State<HomeScreen>
                 },
                 tabs: [
                   Tab(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                    child:  Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(
-                            Icons.account_tree_rounded,
-                            color: AppColors().purple,
-                          ),
+                          SvgPicture.asset('assets/images/svgexport-12 1.svg',width: 24.w,height: 24.h,),
                           SizedBox(width: 5.w),
-                          Text(
+                         const Text(
                             'Portrait screen',
-                            style: GoogleFonts.poppins(
-                              fontSize: 15.sp,
-                            ),
                           ),
                         ],
                       ),
-                    ),
                   ),
                   Tab(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.account_balance_wallet_sharp,
-                            color: AppColors().purple,
-                          ),
-                          SizedBox(width: 5.w),
-                          Text(
-                            'Wide screen',
-                            style: GoogleFonts.poppins(
-                              fontSize: 15.sp,
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SvgPicture.asset('assets/images/Vector.svg',width: 22.w,height: 15.h,),
+                        SizedBox(width: 5.w),
+                        const Text(
+                          'Wide screen',
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
             ),
-            IconButton(onPressed: (){}, icon: const Icon(Icons.search),),
+            SvgPicture.asset('assets/images/Search.svg',width: 24.w,height: 24.h,),
+            SizedBox(width: 14.w,)
           ],
         ),
       ),
-      body: ListView(
-        children: [
-          SizedBox(height: 5.h),
-          IndexedStack(
-            index: _tabController.index,
-            children: [
-              Visibility(
-                visible: _tabController.index == 0,
-                child: const HomeReelsScreen(),
-              ),
-              Visibility(
-                visible: _tabController.index == 1,
-                child: const HomeVideosScreen(),
-              ),
-            ],
-          ),
-        ],
+      body: Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 16.w),
+        child: ListView(
+          children: [
+            SizedBox(height: 5.h),
+            IndexedStack(
+              index: _tabController.index,
+              children: [
+                Visibility(
+                  visible: _tabController.index == 0,
+                  child: const HomeReelsScreen(),
+                ),
+                Visibility(
+                  visible: _tabController.index == 1,
+                  child: const HomeVideosScreen(),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
