@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/screens/bn_screens/profile/drower_screens/saved/saved_reels_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/drower_screens/saved/saved_videos_screen.dart';
@@ -70,16 +71,10 @@ class _SavedScreenState extends State<SavedScreen> with SingleTickerProviderStat
               },
               tabs: [
                 Tab(
-                  child: Icon(
-                    Icons.ad_units,
-                    color: AppColors().purple,
-                  ),
+                  child: SvgPicture.asset('assets/images/svgexport-12 1.svg',width: 24.w,height: 24.h,color: _tabController.index == 0 ? AppColors().purple : AppColors().black),
                 ),
                 Tab(
-                  child: Icon(
-                    Icons.account_tree,
-                    color: AppColors().purple,
-                  ),
+                  child: SvgPicture.asset('assets/images/Vector.svg',width: 22.w,height: 22.h,color: _tabController.index == 1 ? AppColors().purple : AppColors().black),
                 ),
               ],
             ),

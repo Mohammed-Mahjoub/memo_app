@@ -226,7 +226,8 @@ class _SloganScreenState extends State<SloganScreen>
                               height: 40,
                               child: AppButton(
                                 onPress: () {},
-                                text: 'Add to chart',
+                                text: 'Purchase order',
+                                buttonColor: AppColors().purple,
                               ),
                             ),
                           ],
@@ -353,7 +354,8 @@ class _SloganScreenState extends State<SloganScreen>
                               height: 40,
                               child: AppButton(
                                 onPress: () {},
-                                text: 'Add to chart',
+                                text: 'Purchase order',
+                                buttonColor: AppColors().purple,
                               ),
                             ),
                           ],

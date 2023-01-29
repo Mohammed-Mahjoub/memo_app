@@ -44,57 +44,56 @@ class _LanguageState extends State<Language> {
         ),
         child: Column(
           children: [
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1072.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                    ),
-                    width: 304.w,
-                    height: 50.h,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(
-                          5.r,
-                        ),
-                        color: Colors.white),
-                    child: Row(
-                      children: [
-                        Text(
-                          'App Language',
-                          style: GoogleFonts.poppins(fontSize: 13.sp),
-                        ),
-                        Spacer(),
-                        Text(
-                          'English',
-                          style: GoogleFonts.poppins(
-                              fontSize: 13.sp, color: Colors.grey),
-                        ),
-                        InkWell(
-                          onTap: () {},
-                          child: const Icon(
-                            Icons.arrow_forward_ios,
-                          ),
-                        ),
-                      ],
-                    ),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Group 1072.svg',
+                  height: 24.h,
+                  width: 24.w,
+                ),
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
                   ),
-                  Text(
-                    'Select your default app language.',
-                    style: GoogleFonts.poppins(
-                      fontSize: 13.sp,
-                      color: Colors.grey,
-                    ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'App Language',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      Text(
+                        'English',
+                        style: GoogleFonts.poppins(
+                            fontSize: 13.sp, color: Colors.grey),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
+              ],
+            ),
+            SizedBox(height: 5.h),
+            Text(
+              'Select your default app language.',
+              style: GoogleFonts.poppins(
+                fontSize: 13.sp,
+                color: Colors.grey,
               ),
             ),
-
           ],
         ),
       ),

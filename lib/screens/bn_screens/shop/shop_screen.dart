@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/models/city.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
@@ -11,20 +12,25 @@ class ShopScreen extends StatefulWidget {
   State<ShopScreen> createState() => _ShopScreenState();
 }
 
-class _ShopScreenState extends State<ShopScreen> {
+class _ShopScreenState extends State<ShopScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
   late PageController _pageController;
 
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: 3, vsync: this);
     _pageController = PageController(viewportFraction: 0.8, initialPage: 1);
   }
 
   @override
   void dispose() {
+    _tabController.dispose();
     _pageController.dispose();
     super.dispose();
   }
+
 
   int? selectedItem;
   List<City> genders = <City>[
@@ -40,23 +46,6 @@ class _ShopScreenState extends State<ShopScreen> {
         elevation: 0,
         title: Row(
           children: [
-            Container(
-              height: 30.h,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: AppColors().purple,
-                ),
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: IconButton(
-                onPressed: () {},
-                padding: EdgeInsets.zero,
-                icon: Icon(
-                  Icons.location_on_outlined,
-                  color: AppColors().purple,
-                ),
-              ),
-            ),
             SizedBox(width: 15.w),
             Expanded(
               child: DropdownButton<int>(
@@ -110,11 +99,27 @@ class _ShopScreenState extends State<ShopScreen> {
               ),
             ),
             SizedBox(width: 15.w),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-                color: AppColors().black,
+            SvgPicture.asset('assets/images/Search.svg',width: 24.w,height: 24.h,),
+          ],
+        ),
+        leading: Row(
+          children: [
+            SizedBox(width: 5.w),
+            Container(
+              height: 30.h,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: AppColors().purple,
+                ),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: IconButton(
+                onPressed: () {},
+                padding: EdgeInsets.zero,
+                icon: Icon(
+                  Icons.location_on_outlined,
+                  color: AppColors().purple,
+                ),
               ),
             ),
           ],
@@ -144,6 +149,117 @@ class _ShopScreenState extends State<ShopScreen> {
                   ),
                 );
               },
+            ),
+          ),
+          SizedBox(height: 10.h),
+          TabBar(
+            indicatorColor: AppColors().purple,
+            controller: _tabController,
+            labelColor: AppColors().black,
+            unselectedLabelColor: AppColors().grey,
+            onTap: (int tabIndex) {
+              setState(() {
+                _tabController.index = tabIndex;
+              });
+            },
+            tabs: [
+              Tab(
+                child: Text(
+                  'Gaming',
+                  style: GoogleFonts.poppins(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  'Electronics',
+                  style: GoogleFonts.poppins(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  'LifeStyle',
+                  style: GoogleFonts.poppins(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 20.h),
+          Text(
+            'Sellers',
+            style: GoogleFonts.poppins(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w500,
+              color: AppColors().black,
+            ),
+          ),
+          SizedBox(height: 10.h),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 145),
+            child: GridView.builder(
+                itemCount: 9,
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 145 / 100,
+                ),
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, '/product_screen');
+                              },
+                              child: const Image(
+                                image:
+                                AssetImage('assets/images/product.png'),
+                                height: 100,
+                                width: 100,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 3.h),
+                        Text(
+                          'Laptop and pc gaming',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.poppins(
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors().black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+          ),
+          SizedBox(height: 10.h),
+          Text(
+            'Shop',
+            style: GoogleFonts.poppins(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w500,
+              color: AppColors().black,
             ),
           ),
           SizedBox(height: 10.h),

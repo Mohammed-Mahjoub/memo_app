@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/models/bn_screen.dart';
 import 'package:memo_app/screens/bn_screens/shop/shop_screen.dart';
@@ -7,6 +8,7 @@ import 'package:memo_app/screens/bn_screens/add_screen.dart';
 import 'package:memo_app/screens/bn_screens/home/home_screen.dart';
 import 'package:memo_app/screens/bn_screens/chat/chat_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/profile_screen.dart';
+import 'package:memo_app/utils/colors/app_colors.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({Key? key}) : super(key: key);
@@ -63,60 +65,30 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           unselectedFontSize: 12.sp,
           iconSize: 24,
           elevation: 20,
-          items:const [
+          items: [
             BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.home,
-                color: Colors.black,
-              ),
-              icon: Icon(
-                Icons.home,
-                color: Colors.grey,
-              ),
+              activeIcon: SvgPicture.asset('assets/images/homeFill.svg',color: AppColors().black,),
+              icon: SvgPicture.asset('assets/images/home.svg',color: AppColors().grey,),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.shopping_cart_outlined,
-                color: Colors.black,
-              ),
-              icon: Icon(
-                Icons.shopping_cart_outlined,
-                color: Colors.grey,
-              ),
+              activeIcon: SvgPicture.asset('assets/images/shopFill.svg',color: AppColors().grey,),
+              icon: SvgPicture.asset('assets/images/shop.svg',color: AppColors().grey,),
               label: 'Shop',
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.add_box_outlined,
-                color: Colors.black,
-              ),
-              icon: Icon(
-                Icons.add_box_outlined,
-                color: Colors.grey,
-              ),
+              activeIcon: SvgPicture.asset('assets/images/cam.svg',color: AppColors().black,),
+              icon: SvgPicture.asset('assets/images/cam.svg',color: AppColors().grey,),
               label: 'Add',
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.chat,
-                color: Colors.black,
-              ),
-              icon: Icon(
-                Icons.chat,
-                color: Colors.grey,
-              ),
+              activeIcon: SvgPicture.asset('assets/images/chatFill.svg',color: AppColors().black,),
+              icon: SvgPicture.asset('assets/images/chat.svg',color: AppColors().grey,),
               label: 'Chat',
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.person,
-                color: Colors.black,
-              ),
-              icon: Icon(
-                Icons.person,
-                color: Colors.grey,
-              ),
+              activeIcon: SvgPicture.asset('assets/images/profileFill.svg',color: AppColors().black,),
+              icon: SvgPicture.asset('assets/images/profile.svg',color: AppColors().grey,),
               label: 'Profile',
             )
           ],

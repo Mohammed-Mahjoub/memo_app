@@ -61,74 +61,85 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 textAlign: TextAlign.center,
               ),
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1065.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Account details',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: const Icon(
-                  Icons.arrow_forward_ios,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Group 1065.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Account details',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
                 ),
-              onTap: () {
-                Navigator.pushNamed(context, '/account_details');
-              },
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1064.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Privacy',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: const Icon(
-                  Icons.arrow_forward_ios,
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/account_details');
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
-              onTap: () {
-                Navigator.pushNamed(context, '/private_account');
-              },
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1063.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Security',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: const Icon(
-                  Icons.arrow_forward_ios,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Group 1064.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Privacy',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
                 ),
-              onTap: () {
-                Navigator.pushNamed(context, '/security');
-              },
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Share.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Share profile',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: InkWell(
-                onTap: () {},
-                child: const Icon(
-                  Icons.arrow_forward_ios,
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/private_account');
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
-              ),
+              ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Group 1063.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Security',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/security');
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Share.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Share profile',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
             Container(
               height: 24.h,
               width: 140.w,
@@ -144,58 +155,67 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 textAlign: TextAlign.center,
               ),
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Frame1.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Views history',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing:const Icon(
-                  Icons.arrow_forward_ios,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Frame1.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Views history',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
                 ),
-              onTap: () {
-                Navigator.pushNamed(context, '/views_history');
-              },
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1072.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Language',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: const Icon(
-                  Icons.arrow_forward_ios,
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/views_history');
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
-              onTap: () {
-                Navigator.pushNamed(context, '/language');
-              },
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Frame2.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Display',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: const Icon(
-                  Icons.arrow_forward_ios,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Group 1072.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Language',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
                 ),
-              onTap: () {
-                Navigator.pushNamed(context, '/display');
-              },
-
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/language');
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                ),
+              ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Frame2.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Display',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/display');
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
             Container(
               height: 24.h,
               width: 130.w,
@@ -211,57 +231,64 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 textAlign: TextAlign.center,
               ),
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1083.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Report a problem',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: InkWell(
-                onTap: () {},
-                child: const Icon(
-                  Icons.arrow_forward_ios,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Group 1083.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Report a problem',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
                 ),
-              ),
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1084.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'Support',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: InkWell(
-                onTap: () {},
-                child: const Icon(
-                  Icons.arrow_forward_ios,
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
-              ),
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1085.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Text(
-                'About ',
-                style: GoogleFonts.poppins(fontSize: 15.sp),
-              ),
-              trailing: InkWell(
-                onTap: () {},
-                child: const Icon(
-                  Icons.arrow_forward_ios,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Group 1084.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'Support',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
                 ),
-              ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                ),
+              ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Group 1085.svg'),
+                SizedBox(width: 10.w),
+                Text(
+                  'About',
+                  style: GoogleFonts.poppins(fontSize: 13.sp),
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
             Container(
               height: 24.h,
               width: 72.w,

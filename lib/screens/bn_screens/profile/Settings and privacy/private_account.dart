@@ -44,205 +44,247 @@ class _PrivateAccountState extends State<PrivateAccount> {
         ),
         child: Column(
           children: [
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Vector4.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Vector4.svg',
+                  height: 24.h,
+                  width: 24.w,
                 ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Private account',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    Switch(
-                      onChanged: (value) {},
-                      value: true,
-                      activeColor: Colors.white,
-                      activeTrackColor: AppColors().purple,
-                      inactiveThumbColor: Colors.white,
-                      inactiveTrackColor: Colors.grey,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Inbox.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Comments',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Frame6.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Private messages',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    Switch(
-                      onChanged: (value) {},
-                      value: true,
-                      activeColor: Colors.white,
-                      activeTrackColor: AppColors().purple,
-                      inactiveThumbColor: Colors.white,
-                      inactiveTrackColor: Colors.grey,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Download.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Downloads',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    Text(
-                      'on',
-                      style: GoogleFonts.poppins(fontSize: 13.sp,color: Colors.grey),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Private account',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Follow list',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    Text(
-                      'Everyone',
-                      style: GoogleFonts.poppins(fontSize: 13.sp,color: Colors.grey),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
+                      Spacer(),
+                      Switch(
+                        onChanged: (value) {},
+                        value: true,
+                        activeColor: Colors.white,
+                        activeTrackColor: AppColors().purple,
+                        inactiveThumbColor: Colors.white,
+                        inactiveTrackColor: Colors.grey,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Frame7.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Inbox.svg',
+                  height: 24.h,
+                  width: 24.w,
                 ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Blocked accounts',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
                       ),
-                    ),
-                  ],
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Comments',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
-
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Frame6.svg',
+                  height: 24.h,
+                  width: 24.w,
+                ),
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Private messages',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      Switch(
+                        onChanged: (value) {},
+                        value: true,
+                        activeColor: Colors.white,
+                        activeTrackColor: AppColors().purple,
+                        inactiveThumbColor: Colors.white,
+                        inactiveTrackColor: Colors.grey,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Download.svg',
+                  height: 24.h,
+                  width: 24.w,
+                ),
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Downloads',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      Text(
+                        'on',
+                        style: GoogleFonts.poppins(
+                            fontSize: 13.sp, color: Colors.grey),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Group 1.svg',
+                  height: 24.h,
+                  width: 24.w,
+                ),
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Follow list',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      Text(
+                        'Everyone',
+                        style: GoogleFonts.poppins(
+                            fontSize: 13.sp, color: Colors.grey),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Frame7.svg',
+                  height: 24.h,
+                  width: 24.w,
+                ),
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Blocked accounts',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

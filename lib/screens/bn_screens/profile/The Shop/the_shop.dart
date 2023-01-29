@@ -60,72 +60,76 @@ class _TheShopState extends State<TheShop> {
                 ),
               ),
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/User Tag 2.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'Full name',
-                  style: GoogleFonts.poppins(fontSize: 13.sp),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/User Tag 2.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'Full name',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Call.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'Mobile number',
-                  style: GoogleFonts.poppins(fontSize: 13.sp),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Call.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'Mobile number',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/SMS 1.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'Email',
-                  style: GoogleFonts.poppins(fontSize: 13.sp),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/SMS 1.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'Email',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
+              ],
             ),
-            SizedBox(
-              height: 15.h,
-            ),
+            SizedBox(height: 15.h),
             Container(
               height: 120.h,
               width: 251.w,

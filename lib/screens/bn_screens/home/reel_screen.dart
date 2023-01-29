@@ -53,41 +53,34 @@ class _ReelScreenState extends State<ReelScreen> {
                 image: AssetImage('assets/images/reel.png'),
               ),
               Positioned(
-                right: 0,
+                right: 10,
                 bottom: 60.h,
                 child: Column(
                   children: [
                     Column(
                       children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.favorite,
-                            color: AppColors().red,
-                            size: 35,
-                          ),
-                        ),
+                        SvgPicture.asset('assets/images/likeIcon.svg'),
                         Text(
                           'Like',
                           style: GoogleFonts.poppins(
-                              color: AppColors().white,
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400),
+                            color: AppColors().white,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ],
                     ),
                     SizedBox(height: 30.h),
                     Column(
                       children: [
-                        SvgPicture.asset(
-                          'assets/images/Subtract.svg',
-                        ),
+                        SvgPicture.asset('assets/images/Subtract.svg'),
                         Text(
                           'Comment',
                           style: GoogleFonts.poppins(
-                              color: AppColors().white,
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400),
+                            color: AppColors().white,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ],
                     ),
@@ -147,7 +140,8 @@ class _ReelScreenState extends State<ReelScreen> {
                 bottom: 0,
                 right: 40,
                 child: Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

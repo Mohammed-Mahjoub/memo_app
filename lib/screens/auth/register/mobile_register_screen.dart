@@ -110,7 +110,7 @@ class _MobileRegisterScreenState extends State<MobileRegisterScreen> {
         SizedBox(height: 30.h),
         AppButton(
           onPress: () {
-
+          Navigator.push(context, MaterialPageRoute(builder: (context) =>const VerificationCodeScreen(appBarText: 'mobile verification', bodyText: 'Enter the verification code we just sent to your phone number.'),));
           },
           text: 'Send Code',
           buttonColor: bColor,

@@ -115,7 +115,6 @@ class _HomeVideosScreenState extends State<HomeVideosScreen> {
                               context: context,
                               builder: (context) {
                                 return Container(
-                                  height: 350.h,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
                                         topRight: Radius.circular(10.r),
@@ -124,10 +123,12 @@ class _HomeVideosScreenState extends State<HomeVideosScreen> {
                                       color: Colors.white),
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 15.w, vertical: 15.h),
+                                      horizontal: 15.w,
+                                      vertical: 15.h,
+                                    ),
                                     child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment: CrossAxisAlignment.end,
                                       children: [
                                         InkWell(
                                           onTap: () {
@@ -137,111 +138,69 @@ class _HomeVideosScreenState extends State<HomeVideosScreen> {
                                             'assets/images/Vector1.svg',
                                           ),
                                         ),
-                                        ListTile(
-                                          leading: SvgPicture.asset(
-                                            'assets/images/Vector2.svg',
-                                          ),
-                                          title: Text(
-                                            'Block',
-                                            style: GoogleFonts.poppins(
-                                                fontSize: 15.sp),
-                                          ),
-                                          onTap: () {
-                                            showDialog(
-                                              context: context,
-                                              builder: (context) {
-                                                return AlertDialog(
-                                                  title: Center(
-                                                    child: Text(
-                                                      'Block Darkgate?',
-                                                      style:
-                                                          GoogleFonts.poppins(
-                                                            fontSize: 15.sp,
-                                                            fontWeight: FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                  content: Container(
-                                                    height: 40.h,
-                                                    width: 265.w,
-                                                    padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                                    child: Center(
-                                                      child: Text(
-                                                        'they will not be able to send you message, see your posts, or find your profile. ',
-                                                        style:
-                                                        GoogleFonts.poppins(
-                                                          fontSize: 13.sp,
-                                                          fontWeight: FontWeight.w500,
-                                                          color: Colors.grey
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  actions: [
-                                                    TextButton(
-                                                      style: TextButton.styleFrom(
-                                                        foregroundColor: Colors.black,
-                                                        textStyle: GoogleFonts.poppins(
-                                                          fontSize: 15.sp,
-                                                          fontWeight: FontWeight.w500,
-
-                                                        ),
-                                                      ),
-                                                      onPressed: () {},
-                                                      child: const Text('Cancel'),
-                                                    ),
-                                                    SizedBox(width: 94.w,),
-                                                    TextButton(
-                                                      style: TextButton.styleFrom(
-                                                        foregroundColor: Colors.red,
-                                                        textStyle: GoogleFonts.poppins(
-                                                          fontSize: 15.sp,
-                                                          fontWeight: FontWeight.w500,
-
-                                                        ),
-                                                      ),
-                                                      onPressed: () {},
-                                                      child: const Text('Block'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            );
-                                          },
+                                        SizedBox(height: 8.h),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            SvgPicture.asset(
+                                              'assets/images/Vector2.svg',
+                                            ),
+                                            SizedBox(width: 10.w),
+                                            Text(
+                                              'Block',
+                                              style: GoogleFonts.poppins(fontSize: 15.sp),
+                                            ),
+                                          ],
                                         ),
-                                        Divider(),
-                                        ListTile(
-                                          leading: SvgPicture.asset(
-                                            'assets/images/Vector2.svg',
-                                          ),
-                                          title: Text(
-                                            'Not interested',
-                                            style: GoogleFonts.poppins(
-                                                fontSize: 15.sp),
-                                          ),
+                                        SizedBox(height: 8.h),
+                                        const Divider(),
+                                        SizedBox(height: 8.h),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            SvgPicture.asset(
+                                              'assets/images/Vector2.svg',
+                                            ),
+                                            SizedBox(width: 10.w),
+                                            Text(
+                                              'Not interested',
+                                              style: GoogleFonts.poppins(fontSize: 15.sp),
+                                            ),
+                                          ],
                                         ),
-                                        Divider(),
-                                        ListTile(
-                                          leading: SvgPicture.asset(
-                                            'assets/images/Vector2.svg',
-                                          ),
-                                          title: Text(
-                                            'Don\'t recommend account',
-                                            style: GoogleFonts.poppins(
-                                                fontSize: 15.sp),
-                                          ),
+                                        SizedBox(height: 8.h),
+                                        const Divider(),
+                                        SizedBox(height: 8.h),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            SvgPicture.asset(
+                                              'assets/images/Vector2.svg',
+                                            ),
+                                            SizedBox(width: 10.w),
+                                            Text(
+                                              'Don\'t recommend account',
+                                              style: GoogleFonts.poppins(fontSize: 15.sp),
+                                            ),
+                                          ],
                                         ),
-                                        Divider(),
-                                        ListTile(
-                                          leading: SvgPicture.asset(
-                                            'assets/images/Group 631.svg',
-                                          ),
-                                          title: Text(
-                                            'Report',
-                                            style: GoogleFonts.poppins(
-                                                fontSize: 15.sp),
-                                          ),
+                                        SizedBox(height: 8.h),
+                                        const Divider(),
+                                        SizedBox(height: 8.h),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            SvgPicture.asset(
+                                              'assets/images/Group 631.svg',
+                                            ),
+                                            SizedBox(width: 10.w),
+                                            Text(
+                                              'Report',
+                                              style: GoogleFonts.poppins(fontSize: 15.sp),
+                                            ),
+                                          ],
                                         ),
+                                        SizedBox(height: 8.h),
                                       ],
                                     ),
                                   ),

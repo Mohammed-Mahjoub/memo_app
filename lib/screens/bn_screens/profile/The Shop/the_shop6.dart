@@ -59,130 +59,50 @@ class _TheShop6State extends State<TheShop6> {
             SizedBox(
               height: 30.h,
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Frame23.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'Game play',
-                  style: GoogleFonts.poppins(fontSize: 15.sp,fontWeight: FontWeight.w500),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Frame23.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'Game play',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Frame24.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'PC game',
-                  style: GoogleFonts.poppins(fontSize: 15.sp,fontWeight: FontWeight.w500),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Frame24.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'PC game',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
-              onTap: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                        child: Container(
-                          height: 300.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10.r),
-                                topLeft: Radius.circular(10.r),
-                              ),
-                              color: Colors.white),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 15.w, vertical: 15.h),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: SvgPicture.asset(
-                                    'assets/images/Vector1.svg',
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 10.w, vertical: 14.h),
-                                  width: 304.w,
-                                  height: 50.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(
-                                      5.r,
-                                    ),
-                                    color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    'Gaming',
-                                    style: GoogleFonts.poppins(fontSize: 13.sp),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 10.w, vertical: 14.h),
-                                  width: 304.w,
-                                  height: 50.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(
-                                      5.r,
-                                    ),
-                                    color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    'Electronics',
-                                    style: GoogleFonts.poppins(fontSize: 13.sp),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 10.w, vertical: 14.h),
-                                  width: 304.w,
-                                  height: 50.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(
-                                      5.r,
-                                    ),
-                                    color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    'LifeStyle',
-                                    style: GoogleFonts.poppins(fontSize: 13.sp),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                    backgroundColor: Colors.transparent);
-              },
+              ],
             ),
             SizedBox(
               height: 128.h,

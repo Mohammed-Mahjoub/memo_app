@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../../utils/colors/app_colors.dart';
 import '../../../../../widgets/app_button.dart';
@@ -124,7 +125,7 @@ class _WideScreenState extends State<WideScreen> {
                 onTap: () {
                   Navigator.pushNamed(context, '/add_description');
                 },
-                leading: const Icon(Icons.description),
+                leading: SvgPicture.asset('assets/images/addDesc.svg'),
                 title: Text(
                   'Add description',
                   style: GoogleFonts.poppins(
@@ -142,7 +143,7 @@ class _WideScreenState extends State<WideScreen> {
                 onTap: () {
                   Navigator.pushNamed(context, '/add_hashtag');
                 },
-                leading: const Icon(Icons.tag),
+                leading: SvgPicture.asset('assets/images/hash.svg'),
                 title: Text(
                   'Hashtag',
                   style: GoogleFonts.poppins(
@@ -160,7 +161,7 @@ class _WideScreenState extends State<WideScreen> {
                 onTap: () {
                   Navigator.pushNamed(context, '/locations_screen');
                 },
-                leading: const Icon(Icons.location_on_outlined),
+                leading: SvgPicture.asset('assets/images/location.svg'),
                 title: Text(
                   'Location',
                   style: GoogleFonts.poppins(
@@ -176,7 +177,7 @@ class _WideScreenState extends State<WideScreen> {
               ),
               ListTile(
                 onTap: () {},
-                leading: const Icon(Icons.lock_open),
+                leading: SvgPicture.asset('assets/images/lock.svg'),
                 title: Text(
                   'Visible to Everyone',
                   style: GoogleFonts.poppins(
@@ -191,7 +192,7 @@ class _WideScreenState extends State<WideScreen> {
                 ),
               ),
               ListTile(
-                  leading: const Icon(Icons.mark_unread_chat_alt_sharp),
+                  leading: SvgPicture.asset('assets/images/commint.svg'),
                   title: Text(
                     'Allow Comment',
                     style: GoogleFonts.poppins(

@@ -85,7 +85,7 @@ class _MyProfileScreenState extends State<MyProfileScreen>
             ),
             SizedBox(width: 30.w),
             InkWell(
-              onTap: (){
+              onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -184,64 +184,73 @@ class _MyProfileScreenState extends State<MyProfileScreen>
                     context: context,
                     builder: (context) {
                       return Container(
-                        height:260.h,
-                        child: Container(
-                          height: 221.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10.r),
-                                topLeft: Radius.circular(10.r),
-                              ),
-                              color: Colors.white),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 15.w, vertical: 15.h),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                ListTile(
-                                  leading: SvgPicture.asset(
-                                    'assets/images/Group 1057.svg',
-                                  ),
-                                  title: Text(
-                                    'Promotion ads',
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 15.sp
-                                    ),
-                                  ),
-                                ),
-                                Divider(),
-                                ListTile(
-                                  leading: SvgPicture.asset(
-                                    'assets/images/Group 1058.svg',
-                                  ),
-                                  title: Text(
-                                    'The shop',
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 15.sp
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    Navigator.pushNamed(context, '/the_shop');
-                                  },
-                                ),
-                                Divider(),
-                                ListTile(
-                                  leading: SvgPicture.asset(
-                                    'assets/images/Setting.svg',
-                                  ),
-                                  title: Text(
-                                    'Settings and privcy',
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 15.sp
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    Navigator.pushNamed(context, '/settings_and_privacy');
-                                  },
-                                ),
-                              ],
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(10.r),
+                              topLeft: Radius.circular(10.r),
                             ),
+                            color: Colors.white),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15.w, vertical: 15.h),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              SizedBox(height: 20.h),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SvgPicture.asset('assets/images/Group 1057.svg'),
+                                  SizedBox(width: 10.w),
+                                  Text(
+                                    'Promotion ads',
+                                    style: GoogleFonts.poppins(fontSize: 15.sp),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10.h),
+                              const Divider(),
+                              SizedBox(height: 10.h),
+                              InkWell(
+                                onTap: (){
+                                  Navigator.pushNamed(context, '/the_shop');
+                                },
+                                child:
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    SvgPicture.asset('assets/images/Group 1058.svg'),
+                                    SizedBox(width: 10.w),
+                                    Text(
+                                      'The shop',
+                                      style: GoogleFonts.poppins(fontSize: 15.sp),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 10.h),
+                              const Divider(),
+                              SizedBox(height: 10.h),
+                              InkWell(
+                                onTap: (){
+                                  Navigator.pushNamed(context, '/settings_and_privacy');
+                                },
+                                child:
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    SvgPicture.asset('assets/images/Setting.svg'),
+                                    SizedBox(width: 10.w),
+                                    Text(
+                                      'Settings and privacy',
+                                      style: GoogleFonts.poppins(fontSize: 15.sp),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 10.h),
+                            ],
                           ),
                         ),
                       );
@@ -325,22 +334,28 @@ DN''',
             },
             tabs: [
               Tab(
-                child: Icon(
-                  Icons.ad_units,
-                  color: AppColors().purple,
-                ),
+                child: SvgPicture.asset('assets/images/svgexport-12 1.svg',
+                    width: 24.w,
+                    height: 24.h,
+                    color: _tabController.index == 0
+                        ? AppColors().purple
+                        : AppColors().black),
               ),
               Tab(
-                child: Icon(
-                  Icons.account_tree,
-                  color: AppColors().purple,
-                ),
+                child: SvgPicture.asset('assets/images/Vector.svg',
+                    width: 22.w,
+                    height: 22.h,
+                    color: _tabController.index == 1
+                        ? AppColors().purple
+                        : AppColors().black),
               ),
               Tab(
-                child: Icon(
-                  Icons.person,
-                  color: AppColors().purple,
-                ),
+                child: SvgPicture.asset('assets/images/personId.svg',
+                    width: 24.w,
+                    height: 24.h,
+                    color: _tabController.index == 2
+                        ? AppColors().purple
+                        : AppColors().black),
               ),
             ],
           ),

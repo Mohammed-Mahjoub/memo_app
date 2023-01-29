@@ -24,6 +24,9 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
   Color uColor = AppColors().wGrey;
   Color uTColor = AppColors().grey;
 
+  String m = 'MM';
+  String d = 'DD';
+  String y = 'YYYY';
 
   @override
   Widget build(BuildContext context) {
@@ -99,30 +102,131 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
             ],
           ),
           SizedBox(height: 10.h),
-          InkWell(
-            onTap: () {
-              showDatePicker(
-                context: context,
-                initialDate: DateTime.now(),
-                firstDate: DateTime(1900),
-                lastDate: DateTime(2200),
-              ).then((value) {
-                setState(() {
-                  _date = value!;
-                });
-              });
-            },
-            child: Container(
-              height: 48,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.r),
-                border: Border.all(color: AppColors().black),
+          Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors().wGrey,
+                  border: Border.all(color: AppColors().black, width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Text(
+                        m,
+                        style: GoogleFonts.poppins(
+                          color: AppColors().grey,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      InkWell(
+                        onTap: () {
+                          showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(1900),
+                            lastDate: DateTime(2200),
+                          ).then((value) {
+                            setState(() {
+                              m = value != null ? value.month.toString() : 'MM';
+                              d = value != null ? value.day.toString() : 'DD';
+                              y = value != null ? value.year.toString() : 'YYYY';
+                            });
+                          });
+                        },
+                        child: const Icon(Icons.expand_more),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(14),
-                child: Text('${_date.year}-${_date.month}-${_date.day}'),
+              SizedBox(width: 15.w),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors().wGrey,
+                  border: Border.all(color: AppColors().black, width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Text(
+                        d,
+                        style: GoogleFonts.poppins(
+                          color: AppColors().grey,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      InkWell(
+                        onTap: () {
+                          showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(1900),
+                            lastDate: DateTime(2200),
+                          ).then((value) {
+                            setState(() {
+                              m = value != null ? value.month.toString() : 'MM';
+                              d = value != null ? value.day.toString() : 'DD';
+                              y = value != null ? value.year.toString() : 'YYYY';
+                            });
+                          });
+                        },
+                        child: const Icon(Icons.expand_more),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
+              SizedBox(width: 15.w),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors().wGrey,
+                  border: Border.all(color: AppColors().black, width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Text(
+                        y,
+                        style: GoogleFonts.poppins(
+                          color: AppColors().grey,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      InkWell(
+                        onTap: () {
+                          showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(1900),
+                            lastDate: DateTime(2200),
+                          ).then((value) {
+                            setState(() {
+                              m = value != null ? value.month.toString() : 'MM';
+                              d = value != null ? value.day.toString() : 'DD';
+                              y = value != null ? value.year.toString() : 'YYYY';
+                            });
+                          });
+                        },
+                        child: const Icon(Icons.expand_more),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
           SizedBox(height: 20.h),
           Row(
@@ -158,7 +262,7 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
                 children: [
                   Expanded(
                     child: InkWell(
-                      onTap: (){
+                      onTap: () {
                         setState(() {
                           mColor = AppColors().purple;
                           mTColor = AppColors().white;
@@ -190,7 +294,7 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
                   SizedBox(width: 19.w),
                   Expanded(
                     child: InkWell(
-                      onTap: (){
+                      onTap: () {
                         setState(() {
                           mColor = AppColors().wGrey;
                           mTColor = AppColors().grey;
@@ -222,7 +326,7 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
                   SizedBox(width: 19.w),
                   Expanded(
                     child: InkWell(
-                      onTap: (){
+                      onTap: () {
                         setState(() {
                           mColor = AppColors().wGrey;
                           mTColor = AppColors().grey;
@@ -257,8 +361,9 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
           ),
           SizedBox(height: 30.h),
           AppButton(
-            onPress: () {},
-            text: 'Login',
+            onPress: () {
+            },
+            text: 'Next',
             buttonColor: bColor,
             fontWeight: FontWeight.w500,
           ),

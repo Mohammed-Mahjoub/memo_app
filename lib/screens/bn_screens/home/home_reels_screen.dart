@@ -35,78 +35,93 @@ class _HomeReelsScreenState extends State<HomeReelsScreen> {
                   context: context,
                   builder: (context) {
                     return Container(
-                      height: double.infinity,
-                      child: Container(
-                        height: 280.h,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10.r),
-                              topLeft: Radius.circular(10.r),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(10.r),
+                            topLeft: Radius.circular(10.r),
+                          ),
+                          color: Colors.white),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 15.w,
+                          vertical: 15.h,
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: SvgPicture.asset(
+                                'assets/images/Vector1.svg',
+                              ),
                             ),
-                            color: Colors.white),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 15.w, vertical: 15.h),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                                child: SvgPicture.asset(
-                                  'assets/images/Vector1.svg',
-                                ),
-                              ),
-                              ListTile(
-                                leading: SvgPicture.asset(
+                            SizedBox(height: 8.h),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SvgPicture.asset(
                                   'assets/images/Vector2.svg',
                                 ),
-                                title: Text(
+                                SizedBox(width: 10.w),
+                                Text(
                                   'Block',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 15.sp
-                                  ),
+                                  style: GoogleFonts.poppins(fontSize: 15.sp),
                                 ),
-                              ),
-                              Divider(),
-                              ListTile(
-                                leading: SvgPicture.asset(
+                              ],
+                            ),
+                            SizedBox(height: 8.h),
+                            const Divider(),
+                            SizedBox(height: 8.h),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SvgPicture.asset(
                                   'assets/images/Vector2.svg',
                                 ),
-                                title: Text(
+                                SizedBox(width: 10.w),
+                                Text(
                                   'Not interested',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 15.sp
-                                  ),
+                                  style: GoogleFonts.poppins(fontSize: 15.sp),
                                 ),
-                              ),
-                              Divider(),
-                              ListTile(
-                                leading: SvgPicture.asset(
+                              ],
+                            ),
+                            SizedBox(height: 8.h),
+                            const Divider(),
+                            SizedBox(height: 8.h),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SvgPicture.asset(
                                   'assets/images/Vector2.svg',
                                 ),
-                                title: Text(
+                                SizedBox(width: 10.w),
+                                Text(
                                   'Don\'t recommend account',
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 15.sp
-                                  ),
+                                  style: GoogleFonts.poppins(fontSize: 15.sp),
                                 ),
-                              ),
-                              Divider(),
-                              ListTile(
-                                leading: SvgPicture.asset(
+                              ],
+                            ),
+                            SizedBox(height: 8.h),
+                            const Divider(),
+                            SizedBox(height: 8.h),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SvgPicture.asset(
                                   'assets/images/Group 631.svg',
                                 ),
-                                title: Text(
+                                SizedBox(width: 10.w),
+                                Text(
                                   'Report',
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 15.sp
-                                  ),
+                                  style: GoogleFonts.poppins(fontSize: 15.sp),
                                 ),
-                              ),
-                            ],
-                          ),
+                              ],
+                            ),
+                            SizedBox(height: 8.h),
+                          ],
                         ),
                       ),
                     );

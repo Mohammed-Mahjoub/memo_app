@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:memo_app/screens/bn_screens/profile/accounts/accounts_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/other_user_profile_screens/other_accounts_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/other_user_profile_screens/other_reels_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/other_user_profile_screens/other_videos_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/people_screens/people_screen.dart';
-import 'package:memo_app/screens/bn_screens/profile/reels_screen.dart';
-import 'package:memo_app/screens/bn_screens/profile/videos_screen.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
 class OtherProfileScreen extends StatefulWidget {
@@ -257,22 +255,13 @@ DN''',
               },
               tabs: [
                 Tab(
-                  child: Icon(
-                    Icons.ad_units,
-                    color: AppColors().purple,
-                  ),
+                  child: SvgPicture.asset('assets/images/svgexport-12 1.svg',width: 24.w,height: 24.h,color: _tabController.index == 0 ? AppColors().purple : AppColors().black),
                 ),
                 Tab(
-                  child: Icon(
-                    Icons.account_tree,
-                    color: AppColors().purple,
-                  ),
+                  child: SvgPicture.asset('assets/images/Vector.svg',width: 22.w,height: 22.h,color: _tabController.index == 1 ? AppColors().purple : AppColors().black),
                 ),
                 Tab(
-                  child: Icon(
-                    Icons.person,
-                    color: AppColors().purple,
-                  ),
+                  child: SvgPicture.asset('assets/images/personId.svg',width: 24.w,height: 24.h,color: _tabController.index == 2 ? AppColors().purple : AppColors().black),
                 ),
               ],
             ),

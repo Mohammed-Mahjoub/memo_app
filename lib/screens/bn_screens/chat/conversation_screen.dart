@@ -75,7 +75,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
                   ),
                 ),
                 const Icon(
-                  Icons.menu,
+                  Icons.more_horiz,
                   color: Colors.black54,
                 ),
               ],

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 import 'package:memo_app/widgets/app_text_field.dart';
@@ -35,129 +36,153 @@ class _ChatScreenState extends State<ChatScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Inbox',
-                style: GoogleFonts.poppins(
-                    fontSize: 17.sp, fontWeight: FontWeight.w500),
-              ),
-              const Spacer(),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/new_message_screen');
-                },
-                icon: const Icon(Icons.chat),
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
-          child: SizedBox(
-            height: 50.h,
-            child: AppTextField(
-              textEditingController: _textEditingController,
-              hintText: 'Search... ',
-              keyboardType: TextInputType.text,
-              prefixIcon: Icon(Icons.search),
-            ),
-          ),
-        ),
-        TabBar(
-          indicatorColor: Colors.black,
-          controller: _tabController,
-          labelColor: Colors.black,
-          unselectedLabelColor: Colors.black,
-          onTap: (int tabIndex) {
-            setState(() {
-              _tabController.index = tabIndex;
-            });
-          },
-          tabs: [
-            Tab(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(
-                    Icons.email_outlined,
-                  ),
-                  Text(
-                    'Messages',
-                    style: GoogleFonts.poppins(
-                      fontSize: 10.sp,
-                    ),
-                  ),
-                ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Inbox',
+              style: GoogleFonts.poppins(
+                fontSize: 17.sp,
+                fontWeight: FontWeight.w500,
+                color: AppColors().black,
               ),
             ),
-            Tab(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(
-                    Icons.chat_outlined,
-                  ),
-                  Text(
-                    'Comment',
-                    style: GoogleFonts.poppins(
-                      fontSize: 10.sp,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Tab(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(CupertinoIcons.heart_fill),
-                  Text(
-                    'Like',
-                    style: GoogleFonts.poppins(
-                      fontSize: 13.sp,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Tab(
-              height: 50,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(
-                    Icons.person_add_alt,
-                  ),
-                  Text(
-                    'follower',
-                    style: GoogleFonts.poppins(
-                      fontSize: 10.sp,
-                    ),
-                  ),
-                ],
+            const Spacer(),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/new_message_screen');
+              },
+              child: SvgPicture.asset(
+                'assets/images/chatIcon.svg',
+                height: 24.h,
+                width: 24.w,
               ),
             ),
           ],
         ),
-        IndexedStack(
-          index: _tabController.index,
-          children: [
-            Visibility(
-              visible: _tabController.index == 0,
-              child: SizedBox(
-                height: 500.h,
+      ),
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+            child: SizedBox(
+              height: 50.h,
+              child: AppTextField(
+                textEditingController: _textEditingController,
+                hintText: 'Search... ',
+                keyboardType: TextInputType.text,
+                prefixIcon: const Icon(Icons.search),
+              ),
+            ),
+          ),
+          TabBar(
+            indicatorColor: Colors.black,
+            controller: _tabController,
+            labelColor: Colors.black,
+            unselectedLabelColor: Colors.black,
+            onTap: (int tabIndex) {
+              setState(() {
+                _tabController.index = tabIndex;
+              });
+            },
+            tabs: [
+              Tab(
+                height: 55,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/messageIcon.svg',
+                      height: 30.h,
+                      width: 30.w,
+                    ),
+                    Text(
+                      'Messages',
+                      style: GoogleFonts.poppins(
+                        fontSize: 12.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Tab(
+                height: 55,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/commentIcon.svg',
+                      height: 30.h,
+                      width: 30.w,
+                    ),
+                    Text(
+                      'Comment',
+                      style: GoogleFonts.poppins(
+                        fontSize: 12.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Tab(
+                height: 55,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/likeIcon.svg',
+                      height: 30.h,
+                      width: 30.w,
+                    ),
+                    Text(
+                      'Like',
+                      style: GoogleFonts.poppins(
+                        fontSize: 12.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Tab(
+                height: 55,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/follwerIcon.svg',
+                      height: 30.h,
+                      width: 30.w,
+                    ),
+                    Text(
+                      'follower',
+                      style: GoogleFonts.poppins(
+                        fontSize: 12.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          IndexedStack(
+            index: _tabController.index,
+            children: [
+              Visibility(
+                visible: _tabController.index == 0,
                 child: ListView.separated(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return ListTile(
-                      onTap: (){
-                        Navigator.pushNamed(context, '/conversation_screen');
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, '/conversation_screen');
                       },
                       onLongPress: () {
                         showBottomSheet(
@@ -165,8 +190,8 @@ class _ChatScreenState extends State<ChatScreen>
                           context: context,
                           builder: (context) {
                             return SizedBox(
-                              height: 375.h,
                               child: Column(
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Row(
                                     children: [
@@ -192,8 +217,7 @@ class _ChatScreenState extends State<ChatScreen>
                                         onPressed: () {
                                           Navigator.pop(context);
                                         },
-                                        icon:
-                                            const Icon(Icons.push_pin_outlined),
+                                        icon: SvgPicture.asset('assets/images/pin.svg')
                                       ),
                                       Text(
                                         'pin',
@@ -203,15 +227,13 @@ class _ChatScreenState extends State<ChatScreen>
                                       ),
                                     ],
                                   ),
-                                  const Divider(),
                                   Row(
                                     children: [
                                       IconButton(
                                         onPressed: () {
                                           Navigator.pop(context);
                                         },
-                                        icon: const Icon(Icons
-                                            .notifications_active_outlined),
+                                          icon: SvgPicture.asset('assets/images/mute.svg')
                                       ),
                                       Text(
                                         'Mute',
@@ -221,17 +243,14 @@ class _ChatScreenState extends State<ChatScreen>
                                       ),
                                     ],
                                   ),
-                                  const Divider(),
                                   Row(
                                     children: [
                                       IconButton(
                                         onPressed: () {
                                           Navigator.pop(context);
                                         },
-                                        icon: const Icon(
-                                          Icons.delete_outline,
-                                          color: Colors.red,
-                                        ),
+                                          icon: SvgPicture.asset('assets/images/delete.svg')
+
                                       ),
                                       Text(
                                         'Delete',
@@ -243,17 +262,13 @@ class _ChatScreenState extends State<ChatScreen>
                                       ),
                                     ],
                                   ),
-                                  const Divider(),
                                   Row(
                                     children: [
                                       IconButton(
                                         onPressed: () {
                                           Navigator.pop(context);
                                         },
-                                        icon: const Icon(
-                                          Icons.block,
-                                          color: Colors.red,
-                                        ),
+                                          icon: SvgPicture.asset('assets/images/block.svg')
                                       ),
                                       Text(
                                         'Block',
@@ -265,17 +280,13 @@ class _ChatScreenState extends State<ChatScreen>
                                       ),
                                     ],
                                   ),
-                                  const Divider(),
                                   Row(
                                     children: [
                                       IconButton(
                                         onPressed: () {
                                           Navigator.pop(context);
                                         },
-                                        icon: const Icon(
-                                          Icons.report_gmailerrorred_outlined,
-                                          color: Colors.red,
-                                        ),
+                                          icon: SvgPicture.asset('assets/images/report.svg')
                                       ),
                                       Text(
                                         'Report',
@@ -295,9 +306,9 @@ class _ChatScreenState extends State<ChatScreen>
                         );
                       },
                       leading: CircleAvatar(
-                        radius: 25.r,
-                        backgroundImage:
-                            const AssetImage('assets/images/Rectangle 912.png'),
+                        radius: 18.r,
+                        backgroundImage: const AssetImage(
+                            'assets/images/Rectangle 912.png'),
                       ),
                       title: Text(
                         'new_game_every_day',
@@ -307,7 +318,7 @@ class _ChatScreenState extends State<ChatScreen>
                       subtitle: Text(
                         'عندي تلفون ببجي اجمل',
                         style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w500, fontSize: 15.sp),
+                            fontWeight: FontWeight.w400, fontSize: 13.sp),
                       ),
                       trailing: Text(
                         '3/12',
@@ -323,24 +334,23 @@ class _ChatScreenState extends State<ChatScreen>
                   },
                 ),
               ),
-            ),
-            Visibility(
-              visible: _tabController.index == 1,
-              child: SizedBox(
-                height: 500.h,
+              Visibility(
+                visible: _tabController.index == 1,
                 child: ListView.separated(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return ListTile(
                       leading: CircleAvatar(
-                        radius: 25.r,
-                        backgroundImage:
-                            const AssetImage('assets/images/Rectangle 912.png'),
+                        radius: 18.r,
+                        backgroundImage: const AssetImage(
+                            'assets/images/Rectangle 912.png'),
                       ),
                       title: Text(
                         'new_game_every_day',
                         style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w500, fontSize: 15.sp),
+                            fontWeight: FontWeight.w500, fontSize: 13.sp),
                       ),
                       subtitle: Column(
                         children: [
@@ -387,24 +397,23 @@ class _ChatScreenState extends State<ChatScreen>
                   },
                 ),
               ),
-            ),
-            Visibility(
-              visible: _tabController.index == 2,
-              child: SizedBox(
-                height: 500.h,
+              Visibility(
+                visible: _tabController.index == 2,
                 child: ListView.separated(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return ListTile(
                       leading: CircleAvatar(
-                        radius: 25.r,
-                        backgroundImage:
-                            const AssetImage('assets/images/Rectangle 912.png'),
+                        radius: 18.r,
+                        backgroundImage: const AssetImage(
+                            'assets/images/Rectangle 912.png'),
                       ),
                       title: Text(
                         'new_game_every_day',
                         style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w500, fontSize: 15.sp),
+                            fontWeight: FontWeight.w500, fontSize: 13.sp),
                       ),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -442,8 +451,8 @@ class _ChatScreenState extends State<ChatScreen>
                               itemCount: 4,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 10.w),
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 10.w),
                                   child: CircleAvatar(
                                     radius: 15.r,
                                     backgroundImage: const AssetImage(
@@ -470,19 +479,18 @@ class _ChatScreenState extends State<ChatScreen>
                   },
                 ),
               ),
-            ),
-            Visibility(
-              visible: _tabController.index == 3,
-              child: SizedBox(
-                height: 500.h,
+              Visibility(
+                visible: _tabController.index == 3,
                 child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return ListTile(
                       leading: CircleAvatar(
                         radius: 25.r,
-                        backgroundImage:
-                            const AssetImage('assets/images/Rectangle 912.png'),
+                        backgroundImage: const AssetImage(
+                            'assets/images/Rectangle 912.png'),
                       ),
                       title: Text(
                         'hasan darwish',
@@ -505,7 +513,7 @@ class _ChatScreenState extends State<ChatScreen>
                             borderRadius: BorderRadius.circular(5.r),
                             side: const BorderSide(
                               color: Colors.black,
-                              width: 3,
+                              width: 1,
                             ),
                           ),
                         ),
@@ -515,10 +523,10 @@ class _ChatScreenState extends State<ChatScreen>
                   },
                 ),
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

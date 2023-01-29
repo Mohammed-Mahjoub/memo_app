@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 import 'package:memo_app/widgets/app_button.dart';
@@ -106,6 +107,45 @@ class _ProductScreenState extends State<ProductScreen> {
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors().black,
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(color: AppColors().black, width: 1),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.videocam_outlined),
+                          SizedBox(width: 15.w),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.r),
+                              color: AppColors().purple,
+                            ),
+                            child: Padding(
+                              padding:  EdgeInsets.symmetric(vertical: 3.h,horizontal: 5.w),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '1/3',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w400,
+                                      color: AppColors().white,
+                                    ),
+                                  ),
+                                  SizedBox(width: 3.w),
+                                  SvgPicture.asset('assets/images/Image.svg'),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const Spacer(),
@@ -222,11 +262,12 @@ class _ProductScreenState extends State<ProductScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(width: 30.w),
                 SizedBox(
-                  width: 150,
+                  width: 150.w,
                   child: AppButton(
                     onPress: () {},
-                    text: 'Add to chart',
+                    text: 'Purchase order',
                     buttonColor: AppColors().purple,
                   ),
                 ),
@@ -391,7 +432,7 @@ class _ProductScreenState extends State<ProductScreen> {
             visible: visibility2,
             replacement: const SizedBox(height: 0),
             child: GridView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
                 itemCount: 9,
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
@@ -420,11 +461,10 @@ class _ProductScreenState extends State<ProductScreen> {
                               Align(
                                 alignment: Alignment.center,
                                 child: InkWell(
-                                  onTap: () {
-                                  },
+                                  onTap: () {},
                                   child: const Image(
                                     image:
-                                    AssetImage('assets/images/product.png'),
+                                        AssetImage('assets/images/product.png'),
                                     height: 100,
                                     width: 100,
                                     fit: BoxFit.cover,
@@ -455,7 +495,8 @@ class _ProductScreenState extends State<ProductScreen> {
                                 ),
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
@@ -516,7 +557,6 @@ class _ProductScreenState extends State<ProductScreen> {
                   );
                 }),
           ),
-
         ],
       ),
     );

@@ -64,173 +64,98 @@ class _TheShop3State extends State<TheShop3> {
             SizedBox(
               height: 30.h,
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Vector10.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'Name of the bank account holder',
-                  style: GoogleFonts.poppins(fontSize: 13.sp),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Vector10.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'Name of the bank account holder',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group 1131.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'Bank account number',
-                  style: GoogleFonts.poppins(fontSize: 13.sp),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Group 1131.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'Bank account number',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
-              onTap: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                        child: Container(
-                          height: 300.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10.r),
-                                topLeft: Radius.circular(10.r),
-                              ),
-                              color: Colors.white),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 15.w, vertical: 15.h),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: SvgPicture.asset(
-                                    'assets/images/Vector1.svg',
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                                  width: 304.w,
-                                  height: 50.h,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(
-                                        5.r,
-                                      ),
-                                      color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    'Gaming',
-                                    style: GoogleFonts.poppins(fontSize: 13.sp),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                                  width: 304.w,
-                                  height: 50.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(
-                                      5.r,
-                                    ),
-                                    color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    'Electronics',
-                                    style: GoogleFonts.poppins(fontSize: 13.sp),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                                  width: 304.w,
-                                  height: 50.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(
-                                      5.r,
-                                    ),
-                                    color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    'LifeStyle',
-                                    style: GoogleFonts.poppins(fontSize: 13.sp),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                    backgroundColor: Colors.transparent);
-              },
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Groupa.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'IBAN',
-                  style: GoogleFonts.poppins(fontSize: 13.sp),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Groupa.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'IBAN',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Groups.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      5.r,
-                    ),
-                    color: Colors.white),
-                child: Text(
-                  'Bank name',
-                  style: GoogleFonts.poppins(fontSize: 13.sp),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset('assets/images/Groups.svg'),
+                SizedBox(width: 10.w),
+                Container(
+                  padding:
+                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
+                      ),
+                      color: Colors.white),
+                  child: Text(
+                    'Bank name',
+                    style: GoogleFonts.poppins(fontSize: 13.sp),
+                  ),
                 ),
-              ),
+              ],
             ),
-            SizedBox(
-              height: 20.h,
-            ),
+            SizedBox(height: 20.h),
             Container(
               height: 120.h,
               width: 251.w,

@@ -43,140 +43,167 @@ class _SecurityState extends State<Security> {
           vertical: 20.h,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Frame5.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Frame5.svg',
+                  height: 24.h,
+                  width: 24.w,
                 ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Security alerts',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
                       ),
-                    ),
-                  ],
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Security alerts',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/security_alerts');
+                        },
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, '/security_alerts');
-              },
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Group.svg',
+                  height: 24.h,
+                  width: 24.w,
                 ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Your devices',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
+                SizedBox(width: 18.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
                       ),
-                    ),
-                  ],
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Your devices',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/your_devices');
+                        },
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, '/your_devices');
-              },
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Group1.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Group1.svg',
+                  height: 24.h,
+                  width: 24.w,
                 ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Manage app permissions',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
                       ),
-                    ),
-                  ],
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Manage app permissions',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
-            ListTile(
-              leading: SvgPicture.asset(
-                'assets/images/Security Safe.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w,),
-                width: 304.w,
-                height: 50.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r,),
-                    color: Colors.white
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/Security Safe.svg',
+                  height: 24.h,
+                  width: 24.w,
                 ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Two-step verification',
-                      style: GoogleFonts.poppins(fontSize: 13.sp),
-                    ),
-                    Spacer(),
-                    Text(
-                      'off',
-                      style: GoogleFonts.poppins(fontSize: 13.sp,color: Colors.grey),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
+                SizedBox(width: 10.w),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                  ),
+                  width: 304.w,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        5.r,
                       ),
-                    ),
-                  ],
+                      color: Colors.white),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Two-step verification',
+                        style: GoogleFonts.poppins(fontSize: 13.sp),
+                      ),
+                      Spacer(),
+                      Text(
+                        'off',
+                        style: GoogleFonts.poppins(
+                            fontSize: 13.sp, color: Colors.grey),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
           ],
         ),

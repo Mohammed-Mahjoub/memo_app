@@ -36,23 +36,35 @@ class _LocationsScreenState extends State<LocationsScreen> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
-          'Locations',
-          style: GoogleFonts.poppins(
-            fontSize: 17.sp,
-            fontWeight: FontWeight.w500,
-            color: AppColors().black,
-          ),
+        title: Row(
+          children: [
+            InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                width: 20.w,
+                height: 20.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
+                  border: Border.all(color: AppColors().black),
+                ),
+                child:  Icon(Icons.close,color: AppColors().black,size: 18,),
+              ),
+            ),
+            const Spacer(flex: 3),
+            Text(
+              'Locations',
+              style: GoogleFonts.poppins(
+                fontSize: 17.sp,
+                fontWeight: FontWeight.w500,
+                color: AppColors().black,
+              ),
+            ),
+            const Spacer(flex: 4),
+          ],
         ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: AppColors().black,
-          ),
-        ),
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 30.h),
@@ -67,6 +79,7 @@ class _LocationsScreenState extends State<LocationsScreen> {
                 prefixIcon: Icon(Icons.search),
               ),
             ),
+            SizedBox(height: 20.h),
             Expanded(
               child: ListView.builder(
                 padding: EdgeInsets.zero,
