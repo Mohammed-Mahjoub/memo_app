@@ -92,7 +92,7 @@ class _ChatScreenState extends State<ChatScreen>
             },
             tabs: [
               Tab(
-                height: 55,
+                height: 55.h,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
