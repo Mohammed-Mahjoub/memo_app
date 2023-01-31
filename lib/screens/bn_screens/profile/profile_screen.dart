@@ -20,7 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 2,initialIndex: 1, vsync: this);
   }
 
   @override
@@ -90,6 +90,86 @@ class _ProfileScreenState extends State<ProfileScreen>
         actions: [
           IconButton(
             onPressed: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(10.r),
+                            topLeft: Radius.circular(10.r),
+                          ),
+                          color: Colors.white),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 15.w, vertical: 15.h),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            SizedBox(height: 20.h),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SvgPicture.asset(
+                                    'assets/images/Group 1057.svg'),
+                                SizedBox(width: 10.w),
+                                Text(
+                                  'Promotion ads',
+                                  style: GoogleFonts.poppins(fontSize: 15.sp),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 10.h),
+                            const Divider(),
+                            SizedBox(height: 10.h),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/the_shop');
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SvgPicture.asset(
+                                      'assets/images/Group 1058.svg'),
+                                  SizedBox(width: 10.w),
+                                  Text(
+                                    'The shop',
+                                    style:
+                                    GoogleFonts.poppins(fontSize: 15.sp),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 10.h),
+                            const Divider(),
+                            SizedBox(height: 10.h),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, '/settings_and_privacy');
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SvgPicture.asset(
+                                      'assets/images/Setting.svg'),
+                                  SizedBox(width: 10.w),
+                                  Text(
+                                    'Settings and privacy',
+                                    style:
+                                    GoogleFonts.poppins(fontSize: 15.sp),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 10.h),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                  backgroundColor: Colors.transparent);
             },
             icon: const Icon(Icons.menu),
           ),

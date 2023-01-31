@@ -68,7 +68,7 @@ class _CompanyProductScreenState extends State<CompanyProductScreen> {
         children: [
           SizedBox(height: 10.h),
           ConstrainedBox(
-            constraints: BoxConstraints(maxHeight: 150.h),
+            constraints: BoxConstraints(maxHeight: 200.h),
             child: PageView.builder(
               controller: _pageController,
               itemCount: 6,

@@ -32,350 +32,187 @@ class _SloganScreenState extends State<SloganScreen>
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+    return Column(
       children: [
-        SizedBox(height: 10.h),
-        ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: 150.h),
-          child: PageView.builder(
-            controller: _pageController,
-            itemCount: 6,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+        Container(
+          height: 142.h,
+          width: double.infinity,
+          color: AppColors().wGrey,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 80.h,
+                      width: 75.w,
+                      child: Container(
+                        height: 82.h,
+                        width: 72.w,
+                        color: Colors.white,
+                        child: const Icon(Icons.image_outlined),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                      width: 100.w,
+                      child: AppButton(
+                        onPress: () {},
+                        text: 'New products',
+                        buttonColor: Colors.white,
+                        textColor: Colors.black,
+                        fontSize: 13.sp,
+                      ),
+                    ),
+                  ],
                 ),
-                margin: EdgeInsetsDirectional.only(end: index != 5 ? 10 : 0),
-                elevation: 1,
-                color: Colors.white,
-                child: const Image(
-                  image: AssetImage('assets/images/slogan.png'),
-                  fit: BoxFit.cover,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 25.h,
+                      width: 100.w,
+                      child: AppButton(
+                        onPress: () {},
+                        text: 'KSA, Riyadh,A..',
+                        buttonColor: Colors.white,
+                        textColor: Colors.black,
+                        fontSize: 11.sp,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    SizedBox(
+                      height: 25.h,
+                      width: 75.w,
+                      child: AppButton(
+                        onPress: () {},
+                        text: 'Rate 5.0',
+                        buttonColor: Colors.white,
+                        textColor: Colors.black,
+                        fontSize: 13.sp,
+                      ),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 30.h,
+                      width: 130.w,
+                      child: AppButton(
+                        onPress: () {},
+                        text: 'My customers',
+                        buttonColor: AppColors().purple,
+                        textColor: Colors.white,
+                        fontSize: 13.sp,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                      width: 130.w,
+                      child: AppButton(
+                        onPress: () {},
+                        text: 'My orders',
+                        buttonColor: AppColors().purple,
+                        textColor: Colors.white,
+                        fontSize: 13.sp,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                      width: 130.w,
+                      child: AppButton(
+                        onPress: () {},
+                        text: 'Order history',
+                        buttonColor: AppColors().purple,
+                        textColor: Colors.white,
+                        fontSize: 13.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(height: 10.h),
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 20.h),
+          height: 230.h,
+          child: ListView.builder(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            scrollDirection: Axis.horizontal,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.w),
+                height: 220.h,
+                width: 120.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.r),
+                  color: AppColors().wGrey,
+                ),
+                child: Column(
+                  mainAxisAlignment:
+                  MainAxisAlignment.spaceAround,
+                  children: [
+                    Image.asset('assets/images/pngwing 14.png'),
+                    Text(
+                      'لابتوب اسوس اصدار خاص كرت شاشة RTX 3800',
+                      style: GoogleFonts.poppins(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.delete_outline,
+                            color: Colors.red,
+                          ),
+                        ),
+                        Text(
+                          ' \$50000',
+                          style: GoogleFonts.poppins(
+                              fontSize: 13.sp,
+                              color: Colors.blue,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                      width: 130.w,
+                      child: AppButton(
+                        onPress: () {},
+                        text: 'Edit products',
+                        buttonColor: AppColors().purple,
+                        textColor: Colors.white,
+                        fontSize: 13.sp,
+                      ),
+                    ),
+                  ],
                 ),
               );
             },
           ),
-        ),
-        SizedBox(height: 10.h),
-        TabBar(
-          physics: const BouncingScrollPhysics(),
-          isScrollable: true,
-          indicatorColor: AppColors().purple,
-          controller: _tabController,
-          labelColor: AppColors().black,
-          unselectedLabelColor: AppColors().grey,
-          onTap: (int tabIndex) {
-            setState(() {
-              _tabController.index = tabIndex;
-            });
-          },
-          tabs: [
-            Tab(
-              child: Text(
-                'All',
-                style: GoogleFonts.poppins(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            Tab(
-              child: Text(
-                'Laptop',
-                style: GoogleFonts.poppins(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            Tab(
-              child: Text(
-                'Gaming PC',
-                style: GoogleFonts.poppins(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            Tab(
-              child: Text(
-                'Monitor',
-                style: GoogleFonts.poppins(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            Tab(
-              child: Text(
-                'Set',
-                style: GoogleFonts.poppins(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 10.h),
-        ConstrainedBox(
-          constraints: const BoxConstraints(maxHeight: 240),
-          child: GridView.builder(
-              itemCount: 9,
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1,
-                mainAxisSpacing: 10,
-                childAspectRatio: 250 / 180,
-              ),
-              itemBuilder: (context, index) {
-                return Stack(
-                  children: [
-                    Container(
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        color: AppColors().wGrey,
-                        borderRadius: BorderRadius.circular(10.r),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Align(
-                              alignment: Alignment.center,
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(
-                                      context, '/product_screen');
-                                },
-                                child: const Image(
-                                  image:
-                                      AssetImage('assets/images/product.png'),
-                                  height: 100,
-                                  width: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 3.h),
-                            Expanded(
-                              child: Text(
-                                'Laptop and PC gaming Laptop and PC gaming Laptop and PC gaming Laptop and PC gaming',
-                                textAlign: TextAlign.start,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors().black,
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                '5,500\$',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors().red,
-                                ),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.r),
-                                    color: AppColors().white,
-                                    border: Border.all(
-                                      color: AppColors().red,
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5),
-                                    child: Text(
-                                      '-40 %',
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 11.sp,
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors().red,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  '3,300 \$',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors().blue,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 5.h),
-                            SizedBox(
-                              height: 40,
-                              child: AppButton(
-                                onPress: () {},
-                                text: 'Purchase order',
-                                buttonColor: AppColors().purple,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 0,
-                      top: 0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.favorite,
-                          color: AppColors().red,
-                        ),
-                      ),
-                    ),
-                  ],
-                );
-              }),
-        ),
-        SizedBox(height: 20.h),
-        ConstrainedBox(
-          constraints: const BoxConstraints(maxHeight: 240),
-          child: GridView.builder(
-              itemCount: 9,
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1,
-                mainAxisSpacing: 10,
-                childAspectRatio: 250 / 180,
-              ),
-              itemBuilder: (context, index) {
-                return Stack(
-                  children: [
-                    Container(
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        color: AppColors().wGrey,
-                        borderRadius: BorderRadius.circular(10.r),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Align(
-                              alignment: Alignment.center,
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(
-                                      context, '/product_screen');
-                                },
-                                child: const Image(
-                                  image:
-                                      AssetImage('assets/images/product.png'),
-                                  height: 100,
-                                  width: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 3.h),
-                            Expanded(
-                              child: Text(
-                                'Laptop and PC gaming Laptop and PC gaming Laptop and PC gaming Laptop and PC gaming',
-                                textAlign: TextAlign.start,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors().black,
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                '5,500\$',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors().red,
-                                ),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.r),
-                                    color: AppColors().white,
-                                    border: Border.all(
-                                      color: AppColors().red,
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5),
-                                    child: Text(
-                                      '-40 %',
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 11.sp,
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors().red,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  '3,300 \$',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors().blue,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 5.h),
-                            SizedBox(
-                              height: 40,
-                              child: AppButton(
-                                onPress: () {},
-                                text: 'Purchase order',
-                                buttonColor: AppColors().purple,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 0,
-                      top: 0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.favorite_border,
-                        ),
-                      ),
-                    ),
-                  ],
-                );
-              }),
-        ),
+        )
       ],
     );
   }

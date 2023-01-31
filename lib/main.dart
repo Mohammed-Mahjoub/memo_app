@@ -56,6 +56,12 @@ import 'package:memo_app/screens/bn_screens/profile/accounts/add_account_screen.
 import 'package:memo_app/screens/bn_screens/profile/accounts/add_game_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/drower_screens/liked_screens/liked_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/drower_screens/saved/saved_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/edit_profile/bio_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/edit_profile/business_number_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/edit_profile/edir_profile_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/edit_profile/email_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/edit_profile/name_screen.dart';
+import 'package:memo_app/screens/bn_screens/profile/edit_profile/user_name_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/other_user_profile_screens/other_profile_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/product_screen.dart';
 import 'package:memo_app/screens/bn_screens/shop/company_product_screen.dart';
@@ -143,6 +149,12 @@ class MyApp extends StatelessWidget {
               '/date_of_birth': (context) => const DateOfBirth(),
               '/security_alerts': (context) => const SecurityAlerts(),
               '/your_devices': (context) => const YourDevices(),
+              '/edit_profile_screen': (context) => const EditProfileScreen(),
+              '/name_screen': (context) => const NameScreen(),
+              '/user_name_screen': (context) => const UserNameScreen(),
+              '/business_number_screen': (context) => const BusinessNumberScreen(),
+              '/email_screen': (context) => const EmailScreen(),
+              '/bio_screen': (context) => const BioScreen(),
             },
           );
         });
