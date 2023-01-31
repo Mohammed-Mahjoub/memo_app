@@ -34,7 +34,7 @@ class _MainRegisterScreenState extends State<MainRegisterScreen> with SingleTick
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
-          'Sign up',
+          'Log in or Sign up',
           style: GoogleFonts.poppins(
             fontSize: 17.sp,
             fontWeight: FontWeight.w500,

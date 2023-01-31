@@ -72,7 +72,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              activeIcon: SvgPicture.asset('assets/images/shopFill.svg',color: AppColors().grey,),
+              activeIcon: SvgPicture.asset('assets/images/shopFill.svg',color: AppColors().black,),
               icon: SvgPicture.asset('assets/images/shop.svg',color: AppColors().grey,),
               label: 'Shop',
             ),

@@ -138,41 +138,48 @@ class _MyProfileScreenState extends State<MyProfileScreen>
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.r),
-                border: Border.fromBorderSide(
-                  BorderSide(
-                    color: AppColors().black,
+            InkWell(
+              onTap: (){
+                // Navigator.pushNamed(context, '/liked_screen');
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
+                  border: Border.fromBorderSide(
+                    BorderSide(
+                      color: AppColors().black,
+                    ),
                   ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Icon(
-                    Icons.favorite,
-                    color: AppColors().red,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Icon(
+                      Icons.favorite,
+                      color: AppColors().red,
+                    ),
                   ),
                 ),
               ),
             ),
             SizedBox(width: 10.w),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.r),
-                border: Border.fromBorderSide(
-                  BorderSide(
-                    color: AppColors().black,
+            InkWell(
+              onTap: (){
+                // Navigator.pushNamed(context, '/saved_screen');
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
+                  border: Border.fromBorderSide(
+                    BorderSide(
+                      color: AppColors().black,
+                    ),
                   ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Icon(
-                    Icons.save,
-                    color: AppColors().black,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: SvgPicture.asset('assets/images/save.svg'),
                   ),
                 ),
               ),
@@ -201,7 +208,8 @@ class _MyProfileScreenState extends State<MyProfileScreen>
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  SvgPicture.asset('assets/images/Group 1057.svg'),
+                                  SvgPicture.asset(
+                                      'assets/images/Group 1057.svg'),
                                   SizedBox(width: 10.w),
                                   Text(
                                     'Promotion ads',
@@ -213,18 +221,19 @@ class _MyProfileScreenState extends State<MyProfileScreen>
                               const Divider(),
                               SizedBox(height: 10.h),
                               InkWell(
-                                onTap: (){
+                                onTap: () {
                                   Navigator.pushNamed(context, '/the_shop');
                                 },
-                                child:
-                                Row(
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    SvgPicture.asset('assets/images/Group 1058.svg'),
+                                    SvgPicture.asset(
+                                        'assets/images/Group 1058.svg'),
                                     SizedBox(width: 10.w),
                                     Text(
                                       'The shop',
-                                      style: GoogleFonts.poppins(fontSize: 15.sp),
+                                      style:
+                                          GoogleFonts.poppins(fontSize: 15.sp),
                                     ),
                                   ],
                                 ),
@@ -233,18 +242,20 @@ class _MyProfileScreenState extends State<MyProfileScreen>
                               const Divider(),
                               SizedBox(height: 10.h),
                               InkWell(
-                                onTap: (){
-                                  Navigator.pushNamed(context, '/settings_and_privacy');
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, '/settings_and_privacy');
                                 },
-                                child:
-                                Row(
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    SvgPicture.asset('assets/images/Setting.svg'),
+                                    SvgPicture.asset(
+                                        'assets/images/Setting.svg'),
                                     SizedBox(width: 10.w),
                                     Text(
                                       'Settings and privacy',
-                                      style: GoogleFonts.poppins(fontSize: 15.sp),
+                                      style:
+                                          GoogleFonts.poppins(fontSize: 15.sp),
                                     ),
                                   ],
                                 ),
@@ -292,6 +303,14 @@ class _MyProfileScreenState extends State<MyProfileScreen>
           ],
         ),
         SizedBox(height: 15.h),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset('assets/images/quickcall.svg'),
+            SizedBox(width: 20.w),
+            SvgPicture.asset('assets/images/message.svg'),
+          ],
+        ),
         SizedBox(height: 15.h),
         Text(
           '''ناشر محتوى
@@ -326,6 +345,7 @@ DN''',
             indicatorColor: AppColors().purple,
             controller: _tabController,
             labelColor: AppColors().black,
+            indicatorPadding: EdgeInsets.symmetric(horizontal: 15.w),
             unselectedLabelColor: AppColors().grey,
             onTap: (int tabIndex) {
               setState(() {

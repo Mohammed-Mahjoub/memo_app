@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 import 'package:memo_app/widgets/app_button.dart';
@@ -73,7 +74,9 @@ class _SelectCoverScreenState extends State<SelectCoverScreen> {
               style: GoogleFonts.poppins(fontSize: 15.sp),
             ),
           ),
-          SizedBox(height: 25.h,),
+          SizedBox(
+            height: 25.h,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 107),
             child: AppButton(
@@ -82,6 +85,12 @@ class _SelectCoverScreenState extends State<SelectCoverScreen> {
               },
               text: ' Upload',
               buttonColor: AppColors().purple,
+              icon: SvgPicture.asset(
+                'assets/images/cam.svg',
+                color: AppColors().white,
+                height: 20.h,
+                width: 20.w,
+              ),
             ),
           ),
         ],

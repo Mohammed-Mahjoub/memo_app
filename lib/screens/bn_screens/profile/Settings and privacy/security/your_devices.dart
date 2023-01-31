@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../utils/colors/app_colors.dart';
@@ -54,45 +55,50 @@ class _YourDevicesState extends State<YourDevices> {
             child: ListView.builder(
               itemCount: 3,
               itemBuilder: (context, index) {
-                return Container(
-                  height: 120.h,
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                  margin: EdgeInsets.all(10),
-                  width: 375.w,
-                  color: AppColors().wGrey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'iphone 11 Pro',
-                        style: GoogleFonts.poppins(
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w500,
-                        ),
+                return Stack(
+                  children: [
+                    Container(
+                      height: 120.h,
+                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                      margin: EdgeInsets.all(10),
+                      width: 375.w,
+                      color: AppColors().wGrey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'iphone 11 Pro',
+                            style: GoogleFonts.poppins(
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            'Memo App',
+                            style: GoogleFonts.poppins(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          Text(
+                            'Memo App',
+                            style: GoogleFonts.poppins(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          Text(
+                            'Memo App',
+                            style: GoogleFonts.poppins(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        'Memo App',
-                        style: GoogleFonts.poppins(
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Text(
-                        'Memo App',
-                        style: GoogleFonts.poppins(
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Text(
-                        'Memo App',
-                        style: GoogleFonts.poppins(
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                    Positioned(bottom: 30,right: 30,child: SvgPicture.asset('assets/images/trach.svg'))
+                  ],
                 );
               },
             ),

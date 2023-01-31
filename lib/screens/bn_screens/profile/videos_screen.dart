@@ -55,12 +55,12 @@ class _VideosScreenState extends State<VideosScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 5.w),
+                      SizedBox(width: 25.w),
                     ],
                   ),
                 ),
                 Positioned(
-                  right: 0,
+                  right: -10,
                   child: IconButton(
                     onPressed: () {},
                     icon: Icon(

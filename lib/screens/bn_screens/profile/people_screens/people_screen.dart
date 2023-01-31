@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/screens/bn_screens/profile/people_screens/followers_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/people_screens/following_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/people_screens/friends_screen.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
+import 'package:memo_app/widgets/app_text_field.dart';
 
 class PeopleScreen extends StatefulWidget {
   final int index;
@@ -17,17 +19,19 @@ class PeopleScreen extends StatefulWidget {
 class _PeopleScreenState extends State<PeopleScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
+late TextEditingController _textEditingController;
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
     _tabController.index = widget.index;
+    _textEditingController = TextEditingController();
   }
 
   @override
   void dispose() {
     _tabController.dispose();
+    _textEditingController.dispose();
     super.dispose();
   }
   @override
@@ -61,6 +65,7 @@ class _PeopleScreenState extends State<PeopleScreen>
             indicatorColor: AppColors().purple,
             controller: _tabController,
             labelColor: AppColors().purple,
+            indicatorSize: TabBarIndicatorSize.label,
             unselectedLabelColor: AppColors().grey,
             onTap: (int tabIndex) {
               setState(() {
@@ -97,8 +102,25 @@ class _PeopleScreenState extends State<PeopleScreen>
               ),
             ],
           ),
-
-          SizedBox(height: 5.h),
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: SizedBox(
+              height: 40.h,
+              child: AppTextField(
+                textEditingController: _textEditingController,
+                hintText: 'Search',
+                contentPadding: EdgeInsets.symmetric(vertical: 10.h),
+                keyboardType: TextInputType.text,
+                fill: Colors.transparent,
+                prefixIcon: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: SvgPicture.asset('assets/images/Search.svg'),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 10.h),
           IndexedStack(
             index: _tabController.index,
             children: [

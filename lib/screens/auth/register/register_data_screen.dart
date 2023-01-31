@@ -130,6 +130,23 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
                             initialDate: DateTime.now(),
                             firstDate: DateTime(1900),
                             lastDate: DateTime(2200),
+                            builder: (context, child) {
+                              return Theme(
+                                data: Theme.of(context).copyWith(
+                                  colorScheme: ColorScheme.light(
+                                    primary: AppColors().purple, // <-- SEE HERE
+                                    onPrimary:AppColors().white, // <-- SEE HERE
+                                    onSurface: AppColors().purple, // <-- SEE HERE
+                                  ),
+                                  textButtonTheme: TextButtonThemeData(
+                                    style: TextButton.styleFrom(
+                                      backgroundColor: AppColors().wGrey, // button text color
+                                    ),
+                                  ),
+                                ),
+                                child: child!,
+                              );
+                            },
                           ).then((value) {
                             setState(() {
                               m = value != null ? value.month.toString() : 'MM';
@@ -171,6 +188,23 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
                             initialDate: DateTime.now(),
                             firstDate: DateTime(1900),
                             lastDate: DateTime(2200),
+                            builder: (context, child) {
+                              return Theme(
+                                data: Theme.of(context).copyWith(
+                                  colorScheme: ColorScheme.light(
+                                    primary: AppColors().purple, // <-- SEE HERE
+                                    onPrimary:AppColors().white, // <-- SEE HERE
+                                    onSurface: AppColors().purple, // <-- SEE HERE
+                                  ),
+                                  textButtonTheme: TextButtonThemeData(
+                                    style: TextButton.styleFrom(
+                                      backgroundColor: AppColors().wGrey, // button text color
+                                    ),
+                                  ),
+                                ),
+                                child: child!,
+                              );
+                            },
                           ).then((value) {
                             setState(() {
                               m = value != null ? value.month.toString() : 'MM';
@@ -212,6 +246,23 @@ class _RegisterDataScreenState extends State<RegisterDataScreen> {
                             initialDate: DateTime.now(),
                             firstDate: DateTime(1900),
                             lastDate: DateTime(2200),
+                            builder: (context, child) {
+                            return Theme(
+                              data: Theme.of(context).copyWith(
+                                colorScheme: ColorScheme.light(
+                                  primary: AppColors().purple, // <-- SEE HERE
+                                  onPrimary:AppColors().white, // <-- SEE HERE
+                                  onSurface: AppColors().purple, // <-- SEE HERE
+                                ),
+                                textButtonTheme: TextButtonThemeData(
+                                  style: TextButton.styleFrom(
+                                    backgroundColor: AppColors().wGrey, // button text color
+                                  ),
+                                ),
+                              ),
+                              child: child!,
+                            );
+                          },
                           ).then((value) {
                             setState(() {
                               m = value != null ? value.month.toString() : 'MM';

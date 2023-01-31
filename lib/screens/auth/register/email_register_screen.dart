@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 import 'package:memo_app/widgets/app_button.dart';
@@ -56,6 +57,7 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
           textEditingController: _emailController,
           labelText: 'Email / Username',
           hintText: '',
+          fill: Colors.transparent,
           keyboardType: TextInputType.text,
           suffixIcon: IconButton(
             onPressed: () {
@@ -65,7 +67,7 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
                 tColor = AppColors().grey;
               });
             },
-            icon: const Icon(Icons.close),
+            icon: SvgPicture.asset('assets/images/close.svg'),
           ),
           onChange: (String x) {
             if (_emailController.text.isNotEmpty) {
@@ -85,23 +87,23 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
         RichText(
           text: TextSpan(
             text:
-                '''Using your phone number allows you to browse in the stores section, It also helps us personalize your ad experince, and connects you with people you my know, SMS charges my apply. ''',
+                '''By continuing, you agree to Memo’s Terms of Service and confirm that you have read Memo’s Privacy Policy.''',
             style: GoogleFonts.poppins(
               color: AppColors().grey,
               fontSize: 13.sp,
               fontWeight: FontWeight.w400,
             ),
-            children: [
-              TextSpan(
-                text: 'learn more',
-                recognizer: _tapGestureRecognizer,
-                style: GoogleFonts.poppins(
-                  color: AppColors().black,
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ],
+            // children: [
+            //   // TextSpan(
+            //   //   text: 'learn more',
+            //   //   recognizer: _tapGestureRecognizer,
+            //   //   style: GoogleFonts.poppins(
+            //   //     color: AppColors().black,
+            //   //     fontSize: 13.sp,
+            //   //     fontWeight: FontWeight.w400,
+            //   //   ),
+            //   // ),
+            // ],
           ),
         ),
         SizedBox(height: 30.h),

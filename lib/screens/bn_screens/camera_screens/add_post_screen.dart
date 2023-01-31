@@ -199,6 +199,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                             Icons.arrow_forward_ios,
                             size: 18,
                           ),
+                          SizedBox(width: 10.w),
                         ],
                       ),
                     ),
@@ -228,6 +229,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                             Icons.arrow_forward_ios,
                             size: 18,
                           ),
+                          SizedBox(width: 10.w),
                         ],
                       ),
                     ),
@@ -255,6 +257,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                             Icons.arrow_forward_ios,
                             size: 18,
                           ),
+                          SizedBox(width: 10.w),
                         ],
                       ),
                     ),
@@ -372,6 +375,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                             context, '/upload_portrait_or_wide_screen');
                       },
                       text: 'Portrait Upload',
+                      icon: SvgPicture.asset('assets/images/pUpload.svg'),
                     ),
                     SizedBox(
                       height: 50.h,

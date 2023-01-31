@@ -94,15 +94,18 @@ class _UploadPortraitOrWideScreenState extends State<UploadPortraitOrWideScreen>
                           ),
                           Positioned(
                             right: 0,
-                            child: Checkbox(
-                              checkColor: Colors.white,
-                              activeColor: AppColors().purple,
-                              value: true,
-                              shape: CircleBorder(),
-                              onChanged: (bool? value) {
-                                setState(() {
-                                });
-                              },
+                            child: Transform.scale(
+                              scale: 1.3,
+                              child: Checkbox(
+                                checkColor: Colors.white,
+                                activeColor: AppColors().purple,
+                                value: true,
+                                shape: CircleBorder(),
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                  });
+                                },
+                              ),
                             ),
                           ),
                         ],

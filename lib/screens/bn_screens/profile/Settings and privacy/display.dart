@@ -77,10 +77,18 @@ class _DisplayState extends State<Display> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Radio(
-                        value: 'M',
-                        groupValue: '',
-                        onChanged: (String? value) {},
+                      Transform.scale(
+                        scale: 1.5,
+                        child: Checkbox(
+                          checkColor: Colors.white,
+                          activeColor: AppColors().purple,
+                          value: false,
+                          shape: CircleBorder(),
+                          onChanged: (bool? value) {
+                            setState(() {
+                            });
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -94,16 +102,24 @@ class _DisplayState extends State<Display> {
                         width: 90.w,
                       ),
                       Text(
-                        'Darck',
+                        'Dark',
                         style: GoogleFonts.poppins(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Radio(
-                        value: 'M',
-                        groupValue: '',
-                        onChanged: (String? value) {},
+                      Transform.scale(
+                        scale: 1.5,
+                        child: Checkbox(
+                          checkColor: Colors.white,
+                          activeColor: AppColors().purple,
+                          value: true,
+                          shape: CircleBorder(),
+                          onChanged: (bool? value) {
+                            setState(() {
+                            });
+                          },
+                        ),
                       ),
                     ],
                   ),

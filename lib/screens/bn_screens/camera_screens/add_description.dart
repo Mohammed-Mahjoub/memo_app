@@ -36,16 +36,19 @@ class _AddDescriptionState extends State<AddDescription> {
           ),
         ),
       ),
-      body:  TextField(
-          maxLines: 30,
-        keyboardType: TextInputType.text,
-        decoration: const InputDecoration(
-          hintText: 'Add description...',
-        ),
-        onSubmitted: (value) {
-          Navigator.pop(context);
-        },
-        ),
+      body:  Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 16.w),
+        child: TextField(
+            maxLines: 30,
+          keyboardType: TextInputType.text,
+          decoration: const InputDecoration(
+            hintText: 'Add description...',
+          ),
+          onSubmitted: (value) {
+            Navigator.pop(context);
+          },
+          ),
+      ),
 
     );
   }

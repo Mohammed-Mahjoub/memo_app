@@ -28,6 +28,19 @@ class _GenderState extends State<Gender> {
             color: AppColors().black,
           ),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(14),
+            child: Text(
+              'Done',
+              style: GoogleFonts.poppins(
+                fontSize: 17.sp,
+                color: AppColors().purple,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 16.w),

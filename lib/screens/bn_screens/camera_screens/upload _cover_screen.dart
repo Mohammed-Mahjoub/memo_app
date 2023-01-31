@@ -20,23 +20,39 @@ class _UploadCoverScreenState extends State<UploadCoverScreen> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
-          'Portrait Screen',
-          style: GoogleFonts.poppins(
-            fontSize: 17.sp,
-            fontWeight: FontWeight.w500,
-            color: AppColors().black,
+        title: Row(
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              width: 20.w,
+              height: 20.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.r),
+                border: Border.all(color: AppColors().black),
+              ),
+              child: Icon(
+                Icons.close,
+                color: AppColors().black,
+                size: 18,
+              ),
+            ),
           ),
-        ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: AppColors().black,
+          const Spacer(flex: 3),
+          Text(
+            'Upload Cover',
+            style: GoogleFonts.poppins(
+              fontSize: 17.sp,
+              fontWeight: FontWeight.w500,
+              color: AppColors().black,
+            ),
           ),
-        ),
+          const Spacer(flex: 4),
+        ],
+      ),
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 16.w),
@@ -95,15 +111,18 @@ class _UploadCoverScreenState extends State<UploadCoverScreen> {
                       ),
                       Positioned(
                         right: 0,
-                        child: Checkbox(
-                          checkColor: Colors.white,
-                          activeColor: AppColors().purple,
-                          value: true,
-                          shape: CircleBorder(),
-                          onChanged: (bool? value) {
-                            setState(() {
-                            });
-                          },
+                        child: Transform.scale(
+                          scale: 1.3,
+                          child: Checkbox(
+                            checkColor: Colors.white,
+                            activeColor: AppColors().purple,
+                            value: true,
+                            shape: CircleBorder(),
+                            onChanged: (bool? value) {
+                              setState(() {
+                              });
+                            },
+                          ),
                         ),
                       ),
                     ],
@@ -126,7 +145,7 @@ class _UploadCoverScreenState extends State<UploadCoverScreen> {
                 onPress: () {
                   Navigator.pushNamed(context, '/upload_cover_screen');
                 },
-                text: ' Upload',
+                text: ' Done',
                 buttonColor: AppColors().purple,
               ),
             ),

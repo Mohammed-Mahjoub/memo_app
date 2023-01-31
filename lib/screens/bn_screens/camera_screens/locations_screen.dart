@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
@@ -75,10 +76,16 @@ class _LocationsScreenState extends State<LocationsScreen> {
               child: AppTextField(
                 textEditingController: _textEditingController,
                 hintText: 'Search',
+                contentPadding: EdgeInsets.symmetric(vertical: 10.h),
                 keyboardType: TextInputType.text,
-                prefixIcon: Icon(Icons.search),
+                fill: Colors.transparent,
+                prefixIcon: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: SvgPicture.asset('assets/images/Search.svg'),
+                ),
               ),
             ),
+
             SizedBox(height: 20.h),
             Expanded(
               child: ListView.builder(

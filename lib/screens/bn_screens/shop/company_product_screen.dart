@@ -5,17 +5,16 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 import 'package:memo_app/widgets/app_button.dart';
 
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+class CompanyProductScreen extends StatefulWidget {
+  const CompanyProductScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProductScreen> createState() => _ProductScreenState();
+  State<CompanyProductScreen> createState() => _CompanyProductScreenState();
 }
 
-class _ProductScreenState extends State<ProductScreen> {
+class _CompanyProductScreenState extends State<CompanyProductScreen> {
   late PageController _pageController;
   bool visibility = false;
-  bool visibility2 = false;
 
   @override
   void initState() {
@@ -43,7 +42,7 @@ class _ProductScreenState extends State<ProductScreen> {
             Image(image: const AssetImage('assets/images/profile.png'),width: 25.w,height: 25.h,),
             SizedBox(width: 5.w),
             Text(
-              'Nasser_22',
+              'Slogan',
               style: GoogleFonts.poppins(
                 fontSize: 17.sp,
                 fontWeight: FontWeight.w500,
@@ -116,34 +115,19 @@ class _ProductScreenState extends State<ProductScreen> {
                       border: Border.all(color: AppColors().black, width: 1),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding: EdgeInsets.symmetric(vertical: 5.h,horizontal: 10.w),
                       child: Row(
                         children: [
-                          const Icon(Icons.videocam_outlined),
-                          SizedBox(width: 15.w),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.r),
-                              color: AppColors().purple,
-                            ),
-                            child: Padding(
-                              padding:  EdgeInsets.symmetric(vertical: 3.h,horizontal: 5.w),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    '1/3',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w400,
-                                      color: AppColors().white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 3.w),
-                                  SvgPicture.asset('assets/images/Image.svg'),
-                                ],
-                              ),
+                          Text(
+                            '1/3',
+                            style: GoogleFonts.poppins(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors().black,
                             ),
                           ),
+                          SizedBox(width: 10.w),
+                          SvgPicture.asset('assets/images/Image.svg',color: AppColors().black,),
                         ],
                       ),
                     ),
@@ -267,7 +251,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   width: 150.w,
                   child: AppButton(
                     onPress: () {},
-                    text: 'Purchase order',
+                    text: 'Add to cart',
                     buttonColor: AppColors().purple,
                   ),
                 ),
@@ -392,146 +376,6 @@ class _ProductScreenState extends State<ProductScreen> {
                 );
               },
             ),
-          ),
-          SizedBox(height: 20.h),
-          Container(
-            width: double.infinity,
-            height: 48.h,
-            decoration: BoxDecoration(
-              color: AppColors().purple,
-            ),
-            child: Padding(
-              padding: EdgeInsetsDirectional.only(start: 16.w),
-              child: Row(
-                children: [
-                  Text(
-                    'Similar products',
-                    style: GoogleFonts.poppins(
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors().white,
-                    ),
-                  ),
-                  const Spacer(),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        visibility2 = !visibility2;
-                      });
-                    },
-                    icon: Icon(
-                      visibility2
-                          ? Icons.expand_less
-                          : Icons.expand_more,
-                      size: 35,
-                      color: AppColors().white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 10.h),
-          Visibility(
-            visible: visibility2,
-            replacement: const SizedBox(height: 0),
-            child: GridView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                itemCount: 9,
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                scrollDirection: Axis.vertical,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 5,
-                  childAspectRatio: 120 / 180,
-                ),
-                itemBuilder: (context, index) {
-                  return Stack(
-                    children: [
-                      Container(
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          color: AppColors().wGrey,
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10.w),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Align(
-                                alignment: Alignment.center,
-                                child: InkWell(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, '/product_screen');
-                                  },
-                                  child: const Image(
-                                    image:
-                                    AssetImage('assets/images/product.png'),
-                                    height: 100,
-                                    width: 100,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 3.h),
-                              Expanded(
-                                child: Text(
-                                  'Laptop and PC gaming Laptop and PC gaming Laptop and PC gaming Laptop and PC gaming',
-                                  textAlign: TextAlign.start,
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors().black,
-                                  ),
-                                ),
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Image(image: const AssetImage('assets/images/profile.png'),width: 25.w,height: 25.h,),
-                                  Text(
-                                    '3,300 \$',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w500,
-                                      color: AppColors().blue,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 10.h),
-                              SizedBox(
-                                height: 40,
-                                child: AppButton(
-                                  onPress: () {},
-                                  text: 'Purchase order',
-                                  buttonColor: AppColors().purple,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 0,
-                        top: 0,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.favorite,
-                            color: AppColors().red,
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                }),
           ),
           SizedBox(height: 10.h),
         ],

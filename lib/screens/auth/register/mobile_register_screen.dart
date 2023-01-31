@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/screens/auth/forget_password/verification_code_screen.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
@@ -37,7 +38,7 @@ class _MobileRegisterScreenState extends State<MobileRegisterScreen> {
     super.dispose();
   }
 
-  void showLearnMore (){
+  void showLearnMore() {
     print('learn more');
   }
 
@@ -51,13 +52,21 @@ class _MobileRegisterScreenState extends State<MobileRegisterScreen> {
         SizedBox(height: 40.h),
         Row(
           children: [
-            SizedBox(
-              width: 60.w,
-              child: AppTextField(
-                textEditingController: _frontPhoneController,
-                hintText: '+972',
-                keyboardType: TextInputType.phone,
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                border: Border.all(
+                  color: AppColors().grey,
+                  width: 1,
+                ),
+                color: Colors.transparent,
               ),
+              child: Padding(padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 17.h),child: Row(
+                children: [
+                  Text('KW +965'),
+                  Icon(Icons.expand_more),
+                ],
+              ),),
             ),
             SizedBox(width: 15.w),
             Expanded(
@@ -66,7 +75,11 @@ class _MobileRegisterScreenState extends State<MobileRegisterScreen> {
                 labelText: 'Phone number',
                 hintText: '597774041',
                 keyboardType: TextInputType.phone,
-                suffixIcon: const Icon(Icons.phone),
+                fill: Colors.transparent,
+                suffixIcon: Padding(
+                  padding: EdgeInsetsDirectional.only(end: 10.w),
+                  child: SvgPicture.asset('assets/images/CallIcon.svg'),
+                ),
                 onChange: (String x) {
                   if (_phoneController.text.isNotEmpty) {
                     setState(() {
@@ -110,7 +123,14 @@ class _MobileRegisterScreenState extends State<MobileRegisterScreen> {
         SizedBox(height: 30.h),
         AppButton(
           onPress: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) =>const VerificationCodeScreen(appBarText: 'mobile verification', bodyText: 'Enter the verification code we just sent to your phone number.'),));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const VerificationCodeScreen(
+                      appBarText: 'mobile verification',
+                      bodyText:
+                          'Enter the verification code we just sent to your phone number.'),
+                ));
           },
           text: 'Send Code',
           buttonColor: bColor,

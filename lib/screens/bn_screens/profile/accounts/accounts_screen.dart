@@ -24,9 +24,11 @@ class _AccountsScreenState extends State<AccountsScreen> {
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.r),
+                color: AppColors().wGrey,
+                border: Border.all(color: AppColors().purple,width: 1),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding:  EdgeInsets.symmetric(horizontal: 10.w),
                 child: Row(
                   children: [
                     Text(
@@ -56,9 +58,11 @@ class _AccountsScreenState extends State<AccountsScreen> {
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.r),
+                color: AppColors().wGrey,
+                border: Border.all(color: AppColors().purple,width: 1),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding:  EdgeInsets.symmetric(horizontal: 10.w),
                 child: Row(
                   children: [
                     Text(
@@ -85,6 +89,7 @@ class _AccountsScreenState extends State<AccountsScreen> {
             ),
           ],
         ),
+        SizedBox(height: 10.h),
         GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -99,28 +104,32 @@ class _AccountsScreenState extends State<AccountsScreen> {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {},
-                child: Container(
+                child: Card(
+                  elevation: 3,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      children: [
-                        const Image(
-                          image: AssetImage('assets/images/accounts.png'),
-                        ),
-                        SizedBox(width: 15.w),
-                        Text(
-                          'Steam',
-                          style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15.sp,
-                            color: AppColors().black,
+                  child: Container(
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          const Image(
+                            image: AssetImage('assets/images/accounts.png'),
                           ),
-                        ),
-                      ],
+                          SizedBox(width: 15.w),
+                          Text(
+                            'Steam',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15.sp,
+                              color: AppColors().black,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -15,6 +15,10 @@ class AppTextField extends StatelessWidget {
     this.prefixIcon,
     this.onChange,
     this.maxline =1,
+    this.hintColor = const Color(0XFF8F8F8F),
+    this.labelColor = const Color(0XFF8F8F8F),
+    this.fill,
+    this.contentPadding,
   }) : super(key: key);
 
   final TextEditingController textEditingController;
@@ -25,6 +29,10 @@ class AppTextField extends StatelessWidget {
   final bool obscure;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final Color? fill;
+  final Color? hintColor;
+  final Color? labelColor;
+  final EdgeInsets? contentPadding;
   final void Function(String x)? onChange;
   @override
   Widget build(BuildContext context) {
@@ -36,19 +44,24 @@ class AppTextField extends StatelessWidget {
       keyboardType: keyboardType,
       style: GoogleFonts.poppins(),
       decoration: InputDecoration(
+        contentPadding: contentPadding,
+        fillColor: fill,
+        filled: true,
         suffixIcon: suffixIcon,
+        suffixIconConstraints: BoxConstraints(maxHeight: 34.h,maxWidth: 34.w),
+        prefixIconConstraints: BoxConstraints(maxHeight: 34.h,maxWidth: 34.w),
         prefixIcon: prefixIcon,
         label: labelText!=null ? Text(labelText!) : null,
         labelStyle: GoogleFonts.poppins(
           fontSize: 15.sp,
           fontWeight: FontWeight.w400,
-          color: AppColors().black,
+          color: labelColor,
         ),
         hintText: hintText,
         hintStyle: GoogleFonts.poppins(
           fontSize: 13.sp,
           fontWeight: FontWeight.w300,
-          color: AppColors().grey,
+          color: hintColor,
         ),
         helperStyle: GoogleFonts.poppins(fontSize: 13.sp),
         focusedBorder: OutlineInputBorder(

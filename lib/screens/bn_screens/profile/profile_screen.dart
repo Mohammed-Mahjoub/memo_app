@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/screens/bn_screens/profile/my_profile_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/slogan_screen.dart';
@@ -36,10 +37,12 @@ class _ProfileScreenState extends State<ProfileScreen>
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: AppColors().black),
+        automaticallyImplyLeading: false,
         title: TabBar(
           indicatorColor: AppColors().purple,
           controller: _tabController,
           labelColor: AppColors().black,
+          indicatorSize: TabBarIndicatorSize.label,
           unselectedLabelColor: AppColors().grey,
           onTap: (int tabIndex) {
             setState(() {
@@ -52,10 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(
-                    Icons.shopping_cart_outlined,
-                    color: AppColors().purple,
-                  ),
+                  SvgPicture.asset('assets/images/cart.svg'),
                   SizedBox(width: 5.w),
                   Text(
                     'Slogan',
@@ -73,10 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
-                      Icons.person,
-                      color: AppColors().purple,
-                    ),
+                    SvgPicture.asset('assets/images/profile.svg',color: AppColors().purple,),
                     SizedBox(width: 5.w),
                     Text(
                       'Mohammed_Mahjoub',
@@ -90,6 +87,13 @@ class _ProfileScreenState extends State<ProfileScreen>
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+            },
+            icon: const Icon(Icons.menu),
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -106,7 +110,8 @@ class _ProfileScreenState extends State<ProfileScreen>
                     const CircleAvatar(
                       radius: 40,
                       backgroundColor: Colors.white,
-                      child: Image(image: AssetImage('assets/images/profile.png')),
+                      child:
+                          Image(image: AssetImage('assets/images/profile.png')),
                     ),
                     Text(
                       'Mohammed Mahjoub',

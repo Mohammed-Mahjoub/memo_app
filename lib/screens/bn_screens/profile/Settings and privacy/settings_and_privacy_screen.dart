@@ -61,6 +61,7 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 textAlign: TextAlign.center,
               ),
             ),
+            SizedBox(height: 10.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -75,8 +76,9 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                   onPressed: () {
                     Navigator.pushNamed(context, '/account_details');
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
@@ -95,8 +97,9 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                   onPressed: () {
                     Navigator.pushNamed(context, '/private_account');
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
@@ -115,8 +118,9 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                   onPressed: () {
                     Navigator.pushNamed(context, '/security');
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
@@ -132,14 +136,16 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 ),
                 const Spacer(),
                 IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
+                  onPressed: () {
+                  },
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             Container(
               height: 24.h,
               width: 140.w,
@@ -155,6 +161,7 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 textAlign: TextAlign.center,
               ),
             ),
+            SizedBox(height: 10.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -169,8 +176,9 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                   onPressed: () {
                     Navigator.pushNamed(context, '/views_history');
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
@@ -189,8 +197,9 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                   onPressed: () {
                     Navigator.pushNamed(context, '/language');
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
@@ -209,13 +218,14 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                   onPressed: () {
                     Navigator.pushNamed(context, '/display');
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             Container(
               height: 24.h,
               width: 130.w,
@@ -231,6 +241,7 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 textAlign: TextAlign.center,
               ),
             ),
+            SizedBox(height: 10.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -244,10 +255,12 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 IconButton(
                   onPressed: () {
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
+
               ],
             ),
             Row(
@@ -263,8 +276,9 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 IconButton(
                   onPressed: () {
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
@@ -282,13 +296,14 @@ class _SettingsAndPrivacyState extends State<SettingsAndPrivacy> {
                 IconButton(
                   onPressed: () {
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
+                    color: AppColors().grey,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             Container(
               height: 24.h,
               width: 72.w,

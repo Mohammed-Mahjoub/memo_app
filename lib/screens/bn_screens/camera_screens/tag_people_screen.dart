@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 import 'package:memo_app/widgets/app_button.dart';
@@ -49,7 +50,11 @@ class _TagpeopleScreenState extends State<TagPeopleScreen> {
                   borderRadius: BorderRadius.circular(5.r),
                   border: Border.all(color: AppColors().black),
                 ),
-                child:  Icon(Icons.close,color: AppColors().black,size: 18,),
+                child: Icon(
+                  Icons.close,
+                  color: AppColors().black,
+                  size: 18,
+                ),
               ),
             ),
             const Spacer(flex: 3),
@@ -75,10 +80,16 @@ class _TagpeopleScreenState extends State<TagPeopleScreen> {
               child: AppTextField(
                 textEditingController: _textEditingController,
                 hintText: 'Who’s in this video?',
+                contentPadding: EdgeInsets.symmetric(vertical: 10.h),
                 keyboardType: TextInputType.text,
-                prefixIcon: Icon(Icons.search),
+                fill: Colors.transparent,
+                prefixIcon: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: SvgPicture.asset('assets/images/Search.svg'),
+                ),
               ),
             ),
+            SizedBox(height: 15.h),
             Expanded(
               child: ListView.builder(
                 padding: EdgeInsets.zero,
@@ -87,10 +98,18 @@ class _TagpeopleScreenState extends State<TagPeopleScreen> {
                 itemBuilder: (context, index) {
                   return ListTile(
                     contentPadding: EdgeInsets.zero,
-                    trailing: Radio(
-                      value: false,
-                      groupValue: '',
-                      onChanged: (value) {},
+                    trailing: Transform.scale(
+                      scale: 1.5,
+                      child: Checkbox(
+                        checkColor: Colors.white,
+                        activeColor: AppColors().purple,
+                        value: true,
+                        shape: CircleBorder(),
+                        onChanged: (bool? value) {
+                          setState(() {
+                          });
+                        },
+                      ),
                     ),
                     leading: CircleAvatar(
                       radius: 25.r,

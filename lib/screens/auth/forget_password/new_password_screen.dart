@@ -75,6 +75,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             labelText: 'Enter new password',
             hintText: '********',
             keyboardType: TextInputType.text,
+            fill: Colors.transparent,
             obscure: obscure,
             suffixIcon: IconButton(
               onPressed: () {
@@ -82,7 +83,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   obscure = !obscure;
                 });
               },
-              icon: Icon(obscure ? Icons.visibility : Icons.visibility_off),
+              icon: Icon(obscure ? Icons.visibility_off : Icons.visibility),
             ),
             onChange: (String x) {
               if (_emailController.text.isNotEmpty) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
@@ -49,7 +50,11 @@ class _MentionScreenState extends State<MentionScreen> {
                   borderRadius: BorderRadius.circular(5.r),
                   border: Border.all(color: AppColors().black),
                 ),
-                child:  Icon(Icons.close,color: AppColors().black,size: 18,),
+                child: Icon(
+                  Icons.close,
+                  color: AppColors().black,
+                  size: 18,
+                ),
               ),
             ),
             const Spacer(flex: 3),
@@ -75,10 +80,16 @@ class _MentionScreenState extends State<MentionScreen> {
               child: AppTextField(
                 textEditingController: _textEditingController,
                 hintText: 'Who’s in this video?',
+                contentPadding: EdgeInsets.symmetric(vertical: 10.h),
                 keyboardType: TextInputType.text,
-                prefixIcon: Icon(Icons.search),
+                fill: Colors.transparent,
+                prefixIcon: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: SvgPicture.asset('assets/images/Search.svg'),
+                ),
               ),
             ),
+            SizedBox(height: 15.h),
             Expanded(
               child: ListView.builder(
                 padding: EdgeInsets.zero,
@@ -86,10 +97,11 @@ class _MentionScreenState extends State<MentionScreen> {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    trailing: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.person_add_alt)),
+                    contentPadding: EdgeInsetsDirectional.only(end: 10.w),
+                    trailing: InkWell(
+                      onTap: () {},
+                      child: SvgPicture.asset('assets/images/addfrend.svg'),
+                    ),
                     leading: CircleAvatar(
                       radius: 25.r,
                       backgroundImage:
@@ -97,12 +109,16 @@ class _MentionScreenState extends State<MentionScreen> {
                     ),
                     title: Text(
                       'data',
-                      style: GoogleFonts.poppins(fontSize: 15.sp),
+                      style: GoogleFonts.poppins(
+                        fontSize: 15.sp,
+                      ),
                     ),
                     subtitle: Text(
                       'data',
                       style: GoogleFonts.poppins(
-                          fontSize: 15.sp, color: Colors.grey),
+                        fontSize: 15.sp,
+                        color: Colors.grey,
+                      ),
                     ),
                   );
                 },

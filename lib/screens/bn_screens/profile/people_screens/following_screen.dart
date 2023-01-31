@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memo_app/utils/colors/app_colors.dart';
 
@@ -83,7 +84,7 @@ class _FollowingScreenState extends State<FollowingScreen> {
                             ),
                           ),
                           Icon(
-                            Icons.person,
+                            Icons.person_outline,
                             color: AppColors().white,
                           ),
                         ],
@@ -91,10 +92,9 @@ class _FollowingScreenState extends State<FollowingScreen> {
                     ),
                   ),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.notifications_none_outlined),
-                ),
+                SizedBox(width: 10.w),
+                SvgPicture.asset('assets/images/pill.svg'),
+
               ],
             ),
           );

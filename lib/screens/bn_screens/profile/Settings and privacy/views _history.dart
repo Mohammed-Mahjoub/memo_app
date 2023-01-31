@@ -51,6 +51,19 @@ class _ViewsHistoryState extends State<ViewsHistory> with SingleTickerProviderSt
             color: AppColors().black,
           ),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(14),
+            child: Text(
+              'Select',
+              style: GoogleFonts.poppins(
+                fontSize: 17.sp,
+                fontWeight: FontWeight.w500,
+                color: AppColors().black,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -61,6 +74,7 @@ class _ViewsHistoryState extends State<ViewsHistory> with SingleTickerProviderSt
               indicatorColor: AppColors().purple,
               controller: _tabController,
               labelColor: AppColors().purple,
+              indicatorPadding: EdgeInsets.symmetric(horizontal: 40.w),
               labelStyle: GoogleFonts.poppins(
                 fontSize: 13.sp,
                 fontWeight: FontWeight.w500,
@@ -80,7 +94,7 @@ class _ViewsHistoryState extends State<ViewsHistory> with SingleTickerProviderSt
                 ),
               ],
             ),
-            SizedBox(height: 30.h,),
+            SizedBox(height: 10.h,),
             Text('Today',style: GoogleFonts.poppins(color: Colors.grey),),
             SizedBox(height: 15.h,),
             IndexedStack(
@@ -153,83 +167,91 @@ class _ViewsHistoryState extends State<ViewsHistory> with SingleTickerProviderSt
                                 color: AppColors().wGrey,
                                 child: Column(
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 10.w, vertical: 5.h),
-                                      child: Row(
-                                        children: [
-                                          Container(
-                                            padding: EdgeInsets.symmetric(horizontal: 5.w),
-                                            height: 40.h,
-                                            width: 100.w,
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                color: AppColors().purple,
-                                                width: 1,
-                                              ),
-                                              borderRadius: BorderRadius.circular(5.r),
-                                            ),
-                                            child: Row(
-                                              children: [
-                                                CircleAvatar(
-                                                  radius: 12.5.r,
-                                                  child: Image.asset(
-                                                      'assets/images/profile.png'),
+                                    Stack(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 5.h),
+                                          child: Row(
+                                            children: [
+                                              Container(
+                                                padding:
+                                                EdgeInsets.symmetric(horizontal: 5.w),
+                                                height: 40.h,
+                                                width: 100.w,
+                                                decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                    color: AppColors().purple,
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius: BorderRadius.circular(5.r),
                                                 ),
-                                                Column(
+                                                child: Row(
                                                   children: [
-                                                    Row(
+                                                    CircleAvatar(
+                                                      radius: 12.5.r,
+                                                      child: Image.asset(
+                                                          'assets/images/profile.png'),
+                                                    ),
+                                                    Column(
                                                       children: [
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              '105k',
+                                                              style: GoogleFonts.poppins(
+                                                                fontWeight: FontWeight.w600,
+                                                                fontSize: 11.sp,
+                                                                color: AppColors().black,
+                                                              ),
+                                                            ),
+                                                            Icon(
+                                                              Icons.remove_red_eye_outlined,
+                                                              size: 13.h,
+                                                            )
+                                                          ],
+                                                        ),
                                                         Text(
-                                                          '105k',
+                                                          'المحترف الرقمي',
+                                                          textAlign: TextAlign.center,
                                                           style: GoogleFonts.poppins(
                                                             fontWeight: FontWeight.w600,
-                                                            fontSize: 11.sp,
+                                                            fontSize: 10.sp,
                                                             color: AppColors().black,
                                                           ),
                                                         ),
-                                                        Icon(
-                                                          Icons.remove_red_eye_outlined,
-                                                          size: 13.h,
-                                                        )
                                                       ],
-                                                    ),
-                                                    Text(
-                                                      'المحترف الرقمي',
-                                                      textAlign: TextAlign.center,
-                                                      style: GoogleFonts.poppins(
-                                                        fontWeight: FontWeight.w600,
-                                                        fontSize: 10.sp,
-                                                        color: AppColors().black,
-                                                      ),
                                                     ),
                                                   ],
                                                 ),
-                                              ],
-                                            ),
-                                          ),
-                                          SizedBox(width: 10.w),
-                                          SizedBox(
-                                            width: 175.w,
-                                            child: Text(
-                                              'أفضل قطعة إيم من شركة صينية اصدار البرو Armorx الإحترافية اللاحدود لها',
-                                              textAlign: TextAlign.end,
-                                              style: GoogleFonts.poppins(
-                                                fontSize: 11.sp,
-                                                color: AppColors().black,
                                               ),
-                                            ),
+                                              const Spacer(),
+                                              SizedBox(
+                                                width: 175.w,
+                                                child: Text(
+                                                  'أفضل قطعة إيم من شركة صينية اصدار البرو Armorx الإحترافية اللاحدود لها',
+                                                  textAlign: TextAlign.end,
+                                                  style: GoogleFonts.poppins(
+                                                    fontSize: 11.sp,
+                                                    color: AppColors().black,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(width: 25.w),
+                                            ],
                                           ),
-                                          SizedBox(width: 14.w),
-                                          InkWell(
+                                        ),
+                                        Positioned(
+                                          right: 1,
+                                          top: 5,
+                                          child: InkWell(
                                             onTap: () {},
                                             child: Icon(
                                               Icons.more_vert,
                                               color: AppColors().black,
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
                                     InkWell(
                                       onTap: () {
@@ -240,7 +262,6 @@ class _ViewsHistoryState extends State<ViewsHistory> with SingleTickerProviderSt
                                             context: context,
                                             builder: (context) {
                                               return Container(
-                                                height: 350.h,
                                                 decoration: BoxDecoration(
                                                     borderRadius: BorderRadius.only(
                                                       topRight: Radius.circular(10.r),
@@ -249,8 +270,11 @@ class _ViewsHistoryState extends State<ViewsHistory> with SingleTickerProviderSt
                                                     color: Colors.white),
                                                 child: Padding(
                                                   padding: EdgeInsets.symmetric(
-                                                      horizontal: 15.w, vertical: 15.h),
+                                                    horizontal: 15.w,
+                                                    vertical: 15.h,
+                                                  ),
                                                   child: Column(
+                                                    mainAxisSize: MainAxisSize.min,
                                                     crossAxisAlignment:
                                                     CrossAxisAlignment.end,
                                                     children: [
@@ -262,111 +286,77 @@ class _ViewsHistoryState extends State<ViewsHistory> with SingleTickerProviderSt
                                                           'assets/images/Vector1.svg',
                                                         ),
                                                       ),
-                                                      ListTile(
-                                                        leading: SvgPicture.asset(
-                                                          'assets/images/Vector2.svg',
-                                                        ),
-                                                        title: Text(
-                                                          'Block',
-                                                          style: GoogleFonts.poppins(
-                                                              fontSize: 15.sp),
-                                                        ),
-                                                        onTap: () {
-                                                          showDialog(
-                                                            context: context,
-                                                            builder: (context) {
-                                                              return AlertDialog(
-                                                                title: Center(
-                                                                  child: Text(
-                                                                    'Block Darkgate?',
-                                                                    style:
-                                                                    GoogleFonts.poppins(
-                                                                      fontSize: 15.sp,
-                                                                      fontWeight: FontWeight.w500,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                content: Container(
-                                                                  height: 40.h,
-                                                                  width: 265.w,
-                                                                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                                                  child: Center(
-                                                                    child: Text(
-                                                                      'they will not be able to send you message, see your posts, or find your profile. ',
-                                                                      style:
-                                                                      GoogleFonts.poppins(
-                                                                          fontSize: 13.sp,
-                                                                          fontWeight: FontWeight.w500,
-                                                                          color: Colors.grey
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                actions: [
-                                                                  TextButton(
-                                                                    style: TextButton.styleFrom(
-                                                                      foregroundColor: Colors.black,
-                                                                      textStyle: GoogleFonts.poppins(
-                                                                        fontSize: 15.sp,
-                                                                        fontWeight: FontWeight.w500,
-
-                                                                      ),
-                                                                    ),
-                                                                    onPressed: () {},
-                                                                    child: const Text('Cancel'),
-                                                                  ),
-                                                                  SizedBox(width: 94.w,),
-                                                                  TextButton(
-                                                                    style: TextButton.styleFrom(
-                                                                      foregroundColor: Colors.red,
-                                                                      textStyle: GoogleFonts.poppins(
-                                                                        fontSize: 15.sp,
-                                                                        fontWeight: FontWeight.w500,
-
-                                                                      ),
-                                                                    ),
-                                                                    onPressed: () {},
-                                                                    child: const Text('Block'),
-                                                                  ),
-                                                                ],
-                                                              );
-                                                            },
-                                                          );
-                                                        },
+                                                      SizedBox(height: 8.h),
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                            'assets/images/Vector2.svg',
+                                                          ),
+                                                          SizedBox(width: 10.w),
+                                                          Text(
+                                                            'Block',
+                                                            style: GoogleFonts.poppins(
+                                                                fontSize: 15.sp),
+                                                          ),
+                                                        ],
                                                       ),
-                                                      Divider(),
-                                                      ListTile(
-                                                        leading: SvgPicture.asset(
-                                                          'assets/images/Vector2.svg',
-                                                        ),
-                                                        title: Text(
-                                                          'Not interested',
-                                                          style: GoogleFonts.poppins(
-                                                              fontSize: 15.sp),
-                                                        ),
+                                                      SizedBox(height: 8.h),
+                                                      const Divider(),
+                                                      SizedBox(height: 8.h),
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                            'assets/images/Vector2.svg',
+                                                          ),
+                                                          SizedBox(width: 10.w),
+                                                          Text(
+                                                            'Not interested',
+                                                            style: GoogleFonts.poppins(
+                                                                fontSize: 15.sp),
+                                                          ),
+                                                        ],
                                                       ),
-                                                      Divider(),
-                                                      ListTile(
-                                                        leading: SvgPicture.asset(
-                                                          'assets/images/Vector2.svg',
-                                                        ),
-                                                        title: Text(
-                                                          'Don\'t recommend account',
-                                                          style: GoogleFonts.poppins(
-                                                              fontSize: 15.sp),
-                                                        ),
+                                                      SizedBox(height: 8.h),
+                                                      const Divider(),
+                                                      SizedBox(height: 8.h),
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                            'assets/images/Vector2.svg',
+                                                          ),
+                                                          SizedBox(width: 10.w),
+                                                          Text(
+                                                            'Don\'t recommend account',
+                                                            style: GoogleFonts.poppins(
+                                                                fontSize: 15.sp),
+                                                          ),
+                                                        ],
                                                       ),
-                                                      Divider(),
-                                                      ListTile(
-                                                        leading: SvgPicture.asset(
-                                                          'assets/images/Group 631.svg',
-                                                        ),
-                                                        title: Text(
-                                                          'Report',
-                                                          style: GoogleFonts.poppins(
-                                                              fontSize: 15.sp),
-                                                        ),
+                                                      SizedBox(height: 8.h),
+                                                      const Divider(),
+                                                      SizedBox(height: 8.h),
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                            'assets/images/Group 631.svg',
+                                                          ),
+                                                          SizedBox(width: 10.w),
+                                                          Text(
+                                                            'Report',
+                                                            style: GoogleFonts.poppins(
+                                                                fontSize: 15.sp),
+                                                          ),
+                                                        ],
                                                       ),
+                                                      SizedBox(height: 8.h),
                                                     ],
                                                   ),
                                                 ),

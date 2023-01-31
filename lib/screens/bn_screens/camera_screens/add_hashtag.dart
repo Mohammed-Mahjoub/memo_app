@@ -35,15 +35,18 @@ class _AddHashtagState extends State<AddHashtag> {
           ),
         ),
       ),
-      body:  TextField(
-        maxLines: 30,
-        keyboardType: TextInputType.text,
-        decoration: const InputDecoration(
-          hintText: 'Add Hashtag...',
+      body:  Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: TextField(
+          maxLines: 30,
+          keyboardType: TextInputType.text,
+          decoration: const InputDecoration(
+            hintText: 'Add Hashtag...',
+          ),
+          onSubmitted: (value) {
+            Navigator.pop(context);
+          },
         ),
-        onSubmitted: (value) {
-          Navigator.pop(context);
-        },
       ),
 
     );

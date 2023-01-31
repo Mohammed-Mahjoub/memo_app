@@ -2,6 +2,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:memo_app/screens/Dealer%20profile/DealerProfile2.dart';
 import 'package:memo_app/screens/Dealer%20profile/customers_reviews.dart';
+import 'package:memo_app/screens/Dealer%20profile/dealer_store.dart';
 import 'package:memo_app/screens/Dealer%20profile/new_products.dart';
 import 'package:memo_app/screens/Dealer%20profile/order_history.dart';
 import 'package:memo_app/screens/Dealer%20profile/product_details.dart';
@@ -15,6 +16,7 @@ import 'package:memo_app/screens/auth/login_screen.dart';
 import 'package:memo_app/screens/auth/register/main_register_screen.dart';
 import 'package:memo_app/screens/auth/register/register_data_screen.dart';
 import 'package:memo_app/screens/bn_screens/bottom_navigation_screen.dart';
+import 'package:memo_app/screens/bn_screens/camera_screens/add_description.dart';
 import 'package:memo_app/screens/bn_screens/camera_screens/add_hashtag.dart';
 import 'package:memo_app/screens/bn_screens/camera_screens/add_post_screen.dart';
 import 'package:memo_app/screens/bn_screens/camera_screens/locations_screen.dart';
@@ -56,6 +58,8 @@ import 'package:memo_app/screens/bn_screens/profile/drower_screens/liked_screens
 import 'package:memo_app/screens/bn_screens/profile/drower_screens/saved/saved_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/other_user_profile_screens/other_profile_screen.dart';
 import 'package:memo_app/screens/bn_screens/profile/product_screen.dart';
+import 'package:memo_app/screens/bn_screens/shop/company_product_screen.dart';
+import 'package:memo_app/screens/bn_screens/shop/company_store.dart';
 import 'package:memo_app/screens/wellcome/onboarding_screen.dart';
 import 'package:memo_app/screens/wellcome/splash_screen.dart';
 void main() async{
@@ -106,10 +110,14 @@ class MyApp extends StatelessWidget {
               '/select_screen': (context) => const SelectScreen(),
               '/wide_screen': (context) => const WideScreen(),
               '/add_hashtag': (context) => const AddHashtag(),
+              '/add_description': (context) => const AddDescription(),
               '/new_message_screen': (context) => const NewMessageScreen(),
               '/conversation_screen': (context) => const ConversationScreen(),
               '/DealerProfile': (context) => const order_history(),
               '/DealerProfile2': (context) => const DealerProfile2(),
+              '/dealer_store': (context) => const DealerStore(),
+              '/company_store': (context) => const CompanyStore(),
+              '/company_product_screen': (context) => const CompanyProductScreen(),
               '/customers_reviews': (context) => const CustomersReviews(),
               '/new_products': (context) => const NewProducts(),
               '/product_details': (context) => const ProductDetails(),

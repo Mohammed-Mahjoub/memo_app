@@ -21,7 +21,7 @@ class _ShopScreenState extends State<ShopScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
-    _pageController = PageController(viewportFraction: 0.8, initialPage: 1);
+    _pageController = PageController(viewportFraction: 1, initialPage: 0);
   }
 
   @override
@@ -30,7 +30,6 @@ class _ShopScreenState extends State<ShopScreen>
     _pageController.dispose();
     super.dispose();
   }
-
 
   int? selectedItem;
   List<City> genders = <City>[
@@ -46,60 +45,80 @@ class _ShopScreenState extends State<ShopScreen>
         elevation: 0,
         title: Row(
           children: [
-            SizedBox(width: 15.w),
+            SizedBox(width: 5.w),
             Expanded(
-              child: DropdownButton<int>(
-                isExpanded: true,
-                hint: Text(
-                  'City',
-                  style: GoogleFonts.poppins(),
+              child: Container(
+                height: 30.h,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors().black, width: 1),
+                  borderRadius: BorderRadius.circular(10.r),
                 ),
-                underline: const SizedBox(),
-                dropdownColor: Colors.white,
-                borderRadius: BorderRadius.circular(10.r),
-                items: genders.map((gender) {
-                  return DropdownMenuItem<int>(
-                    value: gender.id,
-                    child: Text(gender.name),
-                  );
-                }).toList(),
-                onChanged: (int? value) {
-                  setState(() {
-                    selectedItem = value;
-                  });
-                },
-                icon: const Icon(Icons.keyboard_arrow_down_sharp),
-                value: selectedItem,
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: DropdownButton<int>(
+                  isExpanded: true,
+                  hint: Text(
+                    'City',
+                    style: GoogleFonts.poppins(),
+                  ),
+                  underline: const SizedBox(),
+                  dropdownColor: Colors.white,
+                  borderRadius: BorderRadius.circular(10.r),
+                  items: genders.map((gender) {
+                    return DropdownMenuItem<int>(
+                      value: gender.id,
+                      child: Text(gender.name),
+                    );
+                  }).toList(),
+                  onChanged: (int? value) {
+                    setState(() {
+                      selectedItem = value;
+                    });
+                  },
+                  icon: const Icon(Icons.keyboard_arrow_down_sharp),
+                  value: selectedItem,
+                ),
               ),
             ),
             SizedBox(width: 15.w),
             Expanded(
-              child: DropdownButton<int>(
-                isExpanded: true,
-                hint: Text(
-                  'Area',
-                  style: GoogleFonts.poppins(),
+              child: Container(
+                height: 30.h,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors().black, width: 1),
+                  borderRadius: BorderRadius.circular(10.r),
                 ),
-                underline: const SizedBox(),
-                dropdownColor: Colors.white,
-                borderRadius: BorderRadius.circular(10.r),
-                items: genders.map((gender) {
-                  return DropdownMenuItem<int>(
-                    value: gender.id,
-                    child: Text(gender.name),
-                  );
-                }).toList(),
-                onChanged: (int? value) {
-                  setState(() {
-                    selectedItem = value;
-                  });
-                },
-                icon: const Icon(Icons.keyboard_arrow_down_sharp),
-                value: selectedItem,
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: DropdownButton<int>(
+                  isExpanded: true,
+                  hint: Text(
+                    'Area',
+                    style: GoogleFonts.poppins(),
+                  ),
+                  underline: const SizedBox(),
+                  dropdownColor: Colors.white,
+                  borderRadius: BorderRadius.circular(10.r),
+                  items: genders.map((gender) {
+                    return DropdownMenuItem<int>(
+                      value: gender.id,
+                      child: Text(gender.name),
+                    );
+                  }).toList(),
+                  onChanged: (int? value) {
+                    setState(() {
+                      selectedItem = value;
+                    });
+                  },
+                  icon: const Icon(Icons.keyboard_arrow_down_sharp),
+                  value: selectedItem,
+                ),
               ),
             ),
             SizedBox(width: 15.w),
-            SvgPicture.asset('assets/images/Search.svg',width: 24.w,height: 24.h,),
+            SvgPicture.asset(
+              'assets/images/Search.svg',
+              width: 24.w,
+              height: 24.h,
+            ),
           ],
         ),
         leading: Row(
@@ -108,9 +127,7 @@ class _ShopScreenState extends State<ShopScreen>
             Container(
               height: 30.h,
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: AppColors().purple,
-                ),
+                border: Border.all(color: AppColors().purple),
                 borderRadius: BorderRadius.circular(10.r),
               ),
               child: IconButton(
@@ -126,7 +143,6 @@ class _ShopScreenState extends State<ShopScreen>
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         children: [
           SizedBox(height: 10.h),
           ConstrainedBox(
@@ -135,6 +151,7 @@ class _ShopScreenState extends State<ShopScreen>
               controller: _pageController,
               itemCount: 6,
               scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return Card(
                   shape: RoundedRectangleBorder(
@@ -143,7 +160,7 @@ class _ShopScreenState extends State<ShopScreen>
                   margin: EdgeInsetsDirectional.only(end: index != 5 ? 10 : 0),
                   elevation: 1,
                   color: Colors.white,
-                  child: Image(
+                  child: const Image(
                     image: AssetImage('assets/images/shop.png'),
                     fit: BoxFit.cover,
                   ),
@@ -151,161 +168,199 @@ class _ShopScreenState extends State<ShopScreen>
               },
             ),
           ),
-          SizedBox(height: 10.h),
-          TabBar(
-            indicatorColor: AppColors().purple,
-            controller: _tabController,
-            labelColor: AppColors().black,
-            unselectedLabelColor: AppColors().grey,
-            onTap: (int tabIndex) {
-              setState(() {
-                _tabController.index = tabIndex;
-              });
-            },
-            tabs: [
-              Tab(
-                child: Text(
-                  'Gaming',
-                  style: GoogleFonts.poppins(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w500,
+          ListView(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+            children: [
+              SizedBox(height: 10.h),
+              TabBar(
+                indicatorColor: AppColors().purple,
+                controller: _tabController,
+                labelColor: AppColors().black,
+                unselectedLabelColor: AppColors().grey,
+                // indicatorSize: TabBarIndicatorSize.label,
+                indicatorPadding:
+                    EdgeInsetsDirectional.symmetric(horizontal: 20.w),
+                onTap: (int tabIndex) {
+                  setState(() {
+                    _tabController.index = tabIndex;
+                  });
+                },
+                tabs: [
+                  Tab(
+                    child: Text(
+                      'Gaming',
+                      style: GoogleFonts.poppins(
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
+                  Tab(
+                    child: Text(
+                      'Electronics',
+                      style: GoogleFonts.poppins(
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      'LifeStyle',
+                      style: GoogleFonts.poppins(
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.h),
+              Text(
+                'Sellers',
+                style: GoogleFonts.poppins(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors().black,
                 ),
               ),
-              Tab(
-                child: Text(
-                  'Electronics',
-                  style: GoogleFonts.poppins(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'LifeStyle',
-                  style: GoogleFonts.poppins(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 20.h),
-          Text(
-            'Sellers',
-            style: GoogleFonts.poppins(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w500,
-              color: AppColors().black,
-            ),
-          ),
-          SizedBox(height: 10.h),
-          ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 145),
-            child: GridView.builder(
-                itemCount: 9,
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 145 / 100,
-                ),
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, '/product_screen');
-                              },
-                              child: const Image(
-                                image:
-                                AssetImage('assets/images/product.png'),
-                                height: 100,
-                                width: 100,
-                                fit: BoxFit.cover,
+              SizedBox(height: 10.h),
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxHeight: 160),
+                child: GridView.builder(
+                    itemCount: 9,
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 1,
+                      mainAxisSpacing: 10,
+                      childAspectRatio: 160 / 130,
+                    ),
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, '/dealer_store');
+                                    // Navigator.pushNamed(
+                                    //     context, '/product_screen');
+                                  },
+                                  child: Card(
+                                    elevation: 2,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 8.w, vertical: 8.h),
+                                      child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/product.png'),
+                                        height: 100,
+                                        width: 100,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                            SizedBox(height: 3.h),
+                            Text(
+                              'Laptop and pc gaming',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.poppins(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors().black,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 3.h),
-                        Text(
-                          'Laptop and pc gaming',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.poppins(
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors().black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                }),
-          ),
-          SizedBox(height: 10.h),
-          Text(
-            'Shop',
-            style: GoogleFonts.poppins(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w500,
-              color: AppColors().black,
-            ),
-          ),
-          SizedBox(height: 10.h),
-          GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              scrollDirection: Axis.vertical,
-              itemCount: 9,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 5.h,
-                crossAxisSpacing: 5.w,
-                childAspectRatio: 160 / 110,
+                      );
+                    }),
               ),
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {},
-                  child: Container(
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      color: AppColors().wGrey,
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Image(
-                          image: AssetImage('assets/images/product.png'),
-                          height: 100,
-                          width: 100,
-                          fit: BoxFit.cover,
-                        ),
-                        SizedBox(height: 3.h),
-                        Text(
-                          'Laptop and PC gaming',
-                          style: GoogleFonts.poppins(
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors().black,
-                          ),
-                        ),
-                      ],
-                    ),
+              SizedBox(height: 10.h),
+              Text(
+                'Shop',
+                style: GoogleFonts.poppins(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors().black,
+                ),
+              ),
+              SizedBox(height: 10.h),
+              GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  itemCount: 9,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 5.h,
+                    crossAxisSpacing: 5.w,
+                    childAspectRatio: 160 / 140,
                   ),
-                );
-              }),
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/company_store');
+                      },
+                      child: Container(
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          color: AppColors().wGrey,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: AppColors().grey,width: 1),
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                                width: double.infinity,
+                                child: Center(
+                                  child: SizedBox(
+                                    height: 100.h,
+                                    width: 100.w,
+                                    child: const Image(
+                                      image: AssetImage('assets/images/product.png'),
+                                      height: 100,
+                                      width: 100,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10.h),
+                            Text(
+                              'Laptop and PC gaming',
+                              style: GoogleFonts.poppins(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors().black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+            ],
+          ),
         ],
       ),
     );
